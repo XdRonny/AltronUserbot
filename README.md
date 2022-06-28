@@ -15,9 +15,9 @@
 
 - ᴍᴇ ᴏɴ [ɢɪᴛʜᴜʙ💞](https://github.com/Shailendra34)ㅤㅤㅤㅤㅤㅤㅤㅤ
 ㅤㅤㅤㅤㅤㅤㅤㅤ
-- ᴍᴇ ᴏɴ [ᴛᴇʟᴇɢʀᴀᴍ💔](https://t.me/Shailendra34)
+- ᴍᴇ ᴏɴ [ᴛᴇʟᴇɢʀᴀᴍ🌷](https://t.me/Shailendra34)
 
-- [PʏᴛʜᴏɴX](https://t.me/Dark_X_Python)
+- [PʏᴛʜᴏɴX 💫](https://t.me/Dark_X_Python)
 
 - [PʏTɢCᴀʟʟs](https://github.com/pytgcalls/pytgcalls)
 
