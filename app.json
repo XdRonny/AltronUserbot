@@ -1,0 +1,41 @@
+{
+    "name": "Altron Userbot",
+    "description": "An Advanced Music+Video And Spam userbot.",
+    "logo": "https://te.legra.ph/file/0957630b8248e79400247.jpg",
+    "keywords": [
+        "Telegram",
+        "MusicPlayer",
+        "VideoPlayer"
+    ],
+    "env": {
+        "SESSION": {
+            "description": "Pyrogram String Session",
+            "required": true
+        },
+        "API_ID": {
+            "description": "Get From my.telegram.org/apps",
+            "required": true
+        },
+        "API_HASH": {
+            "description": "API HASH Get it From my.telegram.org/apps",
+            "required": true
+        },
+        "SUDO_USERS": {
+            "description": "sudo id)",
+            "required": true
+        }
+    },
+    "addons": [],
+    "buildpacks": [
+        {
+            "url": "heroku/python"
+        }
+    ],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    },
+    "stack": "container"
+}
