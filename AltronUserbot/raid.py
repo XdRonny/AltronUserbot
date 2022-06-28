@@ -1,6 +1,5 @@
 from pyrogram import filters, Client
 from pyrogram.types import *
-from main import *
 import os
 import sys
 import asyncio
