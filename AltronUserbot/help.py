@@ -23,7 +23,8 @@ def help_(bot, message):
         ],
     ]
     message.reply_text(
-        HELP_TXT.format(message.from_user.first_name),
+        photo="https://te.legra.ph/file/0957630b8248e79400247.jpg",
+        caption=HELP_TXT,
         reply_markup=InlineKeyboardMarkup(HELP_BUTTON)
     )
     message.delete()
