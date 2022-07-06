@@ -1,41 +1,70 @@
 {
-    "name": "Altron Userbot",
-    "description": "An Advanced Music+Video And Spam userbot.",
+    "name": "ᴀʟᴛʀᴏɴ x ᴜsᴇʀʙᴏᴛ",
     "logo": "https://te.legra.ph/file/0957630b8248e79400247.jpg",
-    "keywords": [
-        "Telegram",
-        "MusicPlayer",
-        "VideoPlayer"
-    ],
+    "description": "ᴀɴ ᴀᴅᴠᴀɴᴄᴇᴅ ᴘʀᴇᴍɪᴜᴍ ᴍᴜsɪᴄ + sᴘᴀᴍ ᴜsᴇʀʙᴏᴛ ",
+    "keywords": ["telegram"],
+    "stack": "container",
     "env": {
         "SESSION": {
-            "description": "Pyrogram String Session",
+            "description": "pyrogram string session here",
             "required": true
         },
+        "SESSION2": {
+            "description": "pyrogram string session here",
+            "required": false
+        },
+        "SESSION3": {
+            "description": "pyrogram string session here",
+            "required": false
+        },
+        "SESSION4": {
+            "description": "pyrogram string session here",
+            "required": false
+        },
+        "SESSION5": {
+            "description": "pyrogram string session here",
+            "required": false
+        },
+        "SESSION6": {
+            "description": "pyrogram string session here",
+            "required": false
+        },
+        "SESSION7": {
+            "description": "pyrogram string session here",
+            "required": false
+        },
+        "SESSION8": {
+            "description": "pyrogram string session here",
+            "required": false
+        },
+        "SESSION9": {
+            "description": "pyrogram string session here",
+            "required": false
+        },
+        "SESSION10": {
+            "description": "pyrogram string session here",
+            "required": false
+        },
+        "BOT_TOKEN": {
+            "description": "Fill Bot Token in this var get it from telegram @botfather",
+            "required": true
+        },            
         "API_ID": {
-            "description": "Get From my.telegram.org/apps",
-            "required": true
-        },
-        "API_HASH": {
-            "description": "API HASH Get it From my.telegram.org/apps",
+            "description": "telegram api id here",
             "required": true
         },
         "SUDO_USERS": {
-            "description": "sudo id)",
+            "description": "Who have Access Your Account But Rearly Plugins there",
+            "required": true
+        },
+        "API_HASH": {
+            "description": "telegram api hash here",
             "required": true
         }
     },
-    "addons": [],
     "buildpacks": [
-        {
-            "url": "heroku/python"
-        }
-    ],
-    "formation": {
-        "worker": {
-            "quantity": 1,
-            "size": "free"
-        }
-    },
-    "stack": "container"
+    {
+      "url": "heroku/python"
+    }
+  ]
 }

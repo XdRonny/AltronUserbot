@@ -1,3 +1,5 @@
 build:
   docker:
-    worker: Dockerfile
+    hero: Dockerfile
+run:
+  hero: python3 main.py
