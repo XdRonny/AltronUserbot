@@ -8,8 +8,9 @@ from pyrogram import Client
 from pyrogram.types import *
 from pytgcalls import PyTgCalls
 
+logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
+                    level=logging.WARNING)
 
-logging.basicConfig(level=logging.INFO)
                     
 if os.path.exists("Internal"):
     load_dotenv("Internal")
