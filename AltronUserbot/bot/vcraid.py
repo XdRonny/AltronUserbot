@@ -12,7 +12,7 @@ from pytgcalls.types.input_stream import AudioPiped
 from pytgcalls.types.input_stream.quality import HighQualityAudio
 from helpers.queues import QUEUE, add_to_queue, get_queue, clear_queue
 from config import *
-from config import bot
+from config import bot, SUDO_USERS
 
 
 
