@@ -1,4 +1,5 @@
 import os
+from os import getenv
 import logging
 import aiohttp
 from dotenv import load_dotenv
@@ -12,22 +13,22 @@ logging.basicConfig(level=logging.INFO)
 if os.path.exists("Internal"):
     load_dotenv("Internal")
 
-API_ID = int(os.getenv("API_ID", ""))
-API_HASH = os.getenv("API_HASH", "")
-BOT_TOKEN = os.getenv("BOT_TOKEN", "")
+API_ID = int(getenv("API_ID", ""))
+API_HASH = getenv("API_HASH", "")
+BOT_TOKEN = getenv("BOT_TOKEN", "")
 
-SESSION = os.getenv("SESSION", "")
-SESSION2 = os.getenv("SESSION2", "")
-SESSION3 = os.getenv("SESSION3", "")
-SESSION4 = os.getenv("SESSION4", "")
-SESSION5 = os.getenv("SESSION5", "")
-SESSION6 = os.getenv("SESSION6", "")
-SESSION7 = os.getenv("SESSION7", "")
-SESSION8 = os.getenv("SESSION8", "")
-SESSION9 = os.getenv("SESSION9", "")
-SESSION10 = os.getenv("SESSION10", "")
+SESSION = getenv("SESSION", "")
+SESSION2 = getenv("SESSION2", "")
+SESSION3 = getenv("SESSION3", "")
+SESSION4 = getenv("SESSION4", "")
+SESSION5 = getenv("SESSION5", "")
+SESSION6 = getenv("SESSION6", "")
+SESSION7 = getenv("SESSION7", "")
+SESSION8 = getenv("SESSION8", "")
+SESSION9 = getenv("SESSION9", "")
+SESSION10 = getenv("SESSION10", "")
 
-SUDO_USERS = list(map(int, os.getenv("SUDO_USERS", "1323020756").split()))
+SUDO_USERS = list(map(int, getenv("SUDO_USERS", "1323020756").split()))
 aiohttpsession = aiohttp.ClientSession()
 
 #-------------------------BOT-----------------------------
