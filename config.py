@@ -15,6 +15,7 @@ if os.path.exists("Internal"):
 API_ID = int(os.getenv("API_ID", ""))
 API_HASH = os.getenv("API_HASH", "")
 BOT_TOKEN = os.getenv("BOT_TOKEN", "")
+SUDO_USERS = list(map(int, os.getenv("SUDO_USERS", "").split()))
 
 SESSION = os.getenv("SESSION", "")
 SESSION2 = os.getenv("SESSION2", "")
@@ -26,9 +27,6 @@ SESSION7 = os.getenv("SESSION7", "")
 SESSION8 = os.getenv("SESSION8", "")
 SESSION9 = os.getenv("SESSION9", "")
 SESSION10 = os.getenv("SESSION10", "")
-
-SUDO_USERS = list(map(int, os.getenv("SUDO_USERS", "1323020756").split()))
-aiohttpsession = aiohttp.ClientSession()
 
 #-------------------------BOT-----------------------------
 
@@ -111,3 +109,5 @@ if SESSION10:
 else:
     client10 = None
     call_py10 = None
+
+aiohttpsession = aiohttp.ClientSession()
