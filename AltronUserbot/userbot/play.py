@@ -2,7 +2,6 @@ import asyncio
 import random
 from helpers.command import commandpro
 from helpers.decorators import errors, sudo_users_only
-from pyrogram import Client
 from pyrogram.types import Message
 from pytgcalls import StreamType
 from pytgcalls.types.input_stream import AudioPiped
@@ -45,10 +44,10 @@ async def ytdl(link):
         return 0, stderr.decode()
 
 
-@Client.on_message(commandpro(["!play", "/play", "/p", "P", "Play"]))
+@client.on_message(commandpro(["!play", "/play", "/p", "P", "Play"]))
 @errors
 @sudo_users_only
-async def play(client, m: Message):
+async def play(m: Message):
     replied = m.reply_to_message
     chat_id = m.chat.id
     m.chat.title
@@ -134,10 +133,10 @@ async def play(client, m: Message):
                             await huehue.edit(f"`{ep}`")
 
 
-@Client.on_message(commandpro([".playfrom", "!playfrom", "/playfrom", "PF", "playfrom"]))
+@client.on_message(commandpro([".playfrom", "!playfrom", "/playfrom", "PF", "playfrom"]))
 @errors
 @sudo_users_only
-async def playfrom(client, m: Message):
+async def playfrom(m: Message):
     chat_id = m.chat.id
     if len(m.command) < 2:
         await m.reply(

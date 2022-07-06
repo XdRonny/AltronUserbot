@@ -7,7 +7,7 @@ import asyncio
 import re
 from random import choice
 from pyrogram.types import Message
-from config import *
+from config import SUDO_USERS
 from helpers.data import *
 
 
