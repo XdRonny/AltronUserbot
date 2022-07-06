@@ -29,6 +29,13 @@ SESSION8 = getenv("SESSION8", "")
 SESSION9 = getenv("SESSION9", "")
 SESSION10 = getenv("SESSION10", "")
 
+def make_int(str_input):
+    str_list = str_input.split(" ")
+    int_list = []
+    for x in str_list:
+        int_list.append(int(x))
+    return int_list
+  
 sudo = getenv("SUDO_USERS")
 SUDO_USERS = []
 if sudo:
