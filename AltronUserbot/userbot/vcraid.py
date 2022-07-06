@@ -1,6 +1,5 @@
 import asyncio
 import datetime
-import logging
 import os
 import re
 import sys
@@ -14,8 +13,6 @@ from pytgcalls.types.input_stream.quality import HighQualityAudio
 from helpers.queues import QUEUE, add_to_queue, get_queue, clear_queue
 from config import client, client2, client3, client4, client5, client6, client7, client8, call_py, call_py2, call_py3, call_py4, call_py5, call_py6, call_py7, call_py8, SUDO_USERS
 
-
-logging.basicConfig(level=logging.INFO)
 
 aud_list = [
     "./helpers/AUDIO1.mp3",
