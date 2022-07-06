@@ -1,4 +1,5 @@
 import os
+import sys
 from os import getenv
 import logging
 import aiohttp
@@ -28,7 +29,11 @@ SESSION8 = getenv("SESSION8", "")
 SESSION9 = getenv("SESSION9", "")
 SESSION10 = getenv("SESSION10", "")
 
-SUDO_USERS = list(map(int, getenv("SUDO_USERS", "1323020756").split()))
+sudo = getenv("SUDO_USERS")
+SUDO_USERS = []
+if sudo:
+    SUDO_USERS = make_int(sudo)
+
 aiohttpsession = aiohttp.ClientSession()
 
 #-------------------------BOT-----------------------------
