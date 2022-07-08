@@ -2,7 +2,7 @@ from pyrogram import filters, Client as bot
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, Message
 
 
-@bot.on_message(filters.command("help"))
+@bot.on_message(filters.command(["help", "start"], ["/", "!", "."]))
 def help_(Client, message: Message):
     HELP_TXT = """Hoi \nHere is the help menu choose your desireoption nd explorer it!!\nFor any kind of help or query Just join @Altron_X and ask your query!!"""
     
