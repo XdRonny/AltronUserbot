@@ -1,5 +1,4 @@
-from pyrogram import filters
-from config import bot
+from pyrogram import filters, Client as bot
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, Message
 
 
