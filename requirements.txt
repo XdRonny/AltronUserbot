@@ -6,6 +6,7 @@ git+https://github.com/MrAdityaXD/yt-dl@master
 python-arq
 python-dotenv
 py-tgcalls
+gitpython
 requests
 TgCrypto
 wget
