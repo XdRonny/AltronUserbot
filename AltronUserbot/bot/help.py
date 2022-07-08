@@ -15,8 +15,8 @@ async def start(client: Client, message: Message):
 """
     buttons = [
             [
-                InlineKeyboardButton("✘ ꜱᴜᴘᴘᴏʀᴛ", url=f"https://t.me/{GROUP_SUPPORT}"),
-                InlineKeyboardButton("✘ ᴄʜᴀɴɴᴇʟ", url=f"https://t.me/{UPDATES_CHANNEL}"),
+                InlineKeyboardButton("✘ ꜱᴜᴘᴘᴏʀᴛ", url=f"https://t.me/TheAltron"),
+                InlineKeyboardButton("✘ ᴄʜᴀɴɴᴇʟ", url=f"https://t.me/Altron_X"),
             ],
             [
                 InlineKeyboardButton("✘ ꜱᴏᴜʀᴄᴇ ᴄᴏᴅᴇ", url="https://github.com/TheAltronX/AltronUserbot"),
