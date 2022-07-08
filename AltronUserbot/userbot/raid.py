@@ -5,7 +5,7 @@ import asyncio
 from random import choice
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from AltronUserbot.helpers.data import *
+from helpers.data import *
 from config import *
 
 
