@@ -2,8 +2,7 @@ from pyrogram import filters, Client
 from config import bot
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, Message
 
-get_me = await Client.get_me()
-USERNAME = get_me.username
+
 
 @Client.on_message(filters.command(["start"], ["/", "!"]))
 async def start(client: Client, message: Message):
