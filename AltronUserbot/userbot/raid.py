@@ -11,7 +11,7 @@ from config import *
 
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["raid"], [".", "/", "!"]))
 async def dmraid(xspam: Client, e: Message):
-      hero = await message.reply_text("⚡ ᴜsᴀɢᴇ:\n !raid 10 <ʀᴇᴘʟʏ ᴛᴏ ᴜsᴇʀ ᴏʀ ᴜsᴇʀɴᴀᴍᴇ>")   
+      hero = await e.reply_text("⚡ ᴜsᴀɢᴇ:\n !raid 10 <ʀᴇᴘʟʏ ᴛᴏ ᴜsᴇʀ ᴏʀ ᴜsᴇʀɴᴀᴍᴇ>")   
       TheAltronX = "".join(e.text.split(maxsplit=1)[1:]).split(" ", 2)
       if len(TheAltronX) == 2:
           ok = await xspam.get_users(TheAltronX[1])
