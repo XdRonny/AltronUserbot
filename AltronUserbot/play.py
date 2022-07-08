@@ -155,7 +155,7 @@ async def playfrom(Client, m: Message):
         await m.delete()
         hmm = await m.reply(f"**🔎 𝑭𝒆𝒕𝒄𝒉𝒊𝒏𝒈 {limit} 𝒓𝒂𝒏𝒅𝒐𝒎 𝒔𝒐𝒏𝒈𝒔 𝒇𝒓𝒐𝒎 {chat}**")
         try:
-            async for x in bot.search_messages(chat, limit=limit, filter="audio"):
+            async for x in client.search_messages(chat, limit=limit, filter="audio"):
                 location = await x.download()
                 if x.audio.title:
                     songname = x.audio.title[:30] + "..."
