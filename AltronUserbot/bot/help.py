@@ -1,9 +1,10 @@
-from pyrogram import filters, Client as bot
+from pyrogram import filters, Client
+from config import bot
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, Message
 
 
-@bot.on_message(filters.command("help"))
-def help_(message: Message):
+@bot.on_message(filters.command(["help", "start"], ["/", "!", "."]))
+def help_(Client, message: Message):
     HELP_TXT = """Hoi \nHere is the help menu choose your desireoption nd explorer it!!\nFor any kind of help or query Just join @Altron_X and ask your query!!"""
     
     message.reply_photo(
@@ -29,7 +30,7 @@ def help_(message: Message):
     message.delete()
 
 @bot.on_callback_query()
-def callback_query(callback: CallbackQuery):
+def callback_query(Client, callback: CallbackQuery):
     if callback.data == "help_":
     
         HELP_TXT = f"""Hoi, Here is the help menu choose your desireoption nd explorer it!!\nFor any kind of help or query Just join @Altron_X and ask your query!!"""
