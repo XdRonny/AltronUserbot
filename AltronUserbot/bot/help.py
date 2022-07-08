@@ -2,8 +2,36 @@ from pyrogram import filters, Client
 from config import bot
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, Message
 
+get_me = await Client.get_me()
+USERNAME = get_me.username
 
-@bot.on_message(filters.command(["help", "start"], ["/", "!", "."]))
+@Client.on_message(filters.command(["start"], ["/", "!"]))
+async def start(client: Client, message: Message):
+    HOME_TEXT = """
+ʜᴇʏᴀ {message.from_user.first_name}
+➖➖➖➖➖➖➖➖➖➖➖➖➖➖
+✘ **ɪ'ᴍ ɴᴏᴛ ᴊᴜsᴛ ᴀɴ ᴜsᴇʀʙᴏᴛ, ɪ ᴀᴍ ᴀʟsᴏ ᴀ sᴘᴀᴍʙᴏᴛ ʙᴏᴛ. ɪ ᴄᴀɴ ᴘʟᴀʏ ᴍᴜsɪᴄ ᴛʜʀᴏᴡ ᴜsᴇʀʙᴏᴛ. ɪ ᴄᴀɴ sᴘᴀᴍ ᴍsɢ ғʀᴏᴍ ʙᴏᴛ ᴀɴᴅ ᴜsᴇʀʙᴏᴛ ʙᴏᴛʜ. ɪ ʜᴀᴠᴇ ʟᴏᴛꜱ ᴏꜰ ꜰᴇᴀᴛᴜʀᴇꜱ ᴡʜɪᴄʜ ʏᴏᴜ ʟɪᴋᴇꜱ ᴛʜᴀᴛ**.
+➖➖➖➖➖➖➖➖➖➖➖➖➖➖
+✘ **ᴄʟɪᴄᴋ ᴏɴ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴ 🔘 ꜰᴏʀ ᴍᴏʀᴇ ɪɴꜰᴏʀᴍᴀᴛɪᴏɴ ℹ️**.
+"""
+    buttons = [
+            [
+                InlineKeyboardButton("✘ ꜱᴜᴘᴘᴏʀᴛ", url=f"https://t.me/{GROUP_SUPPORT}"),
+                InlineKeyboardButton("✘ ᴄʜᴀɴɴᴇʟ", url=f"https://t.me/{UPDATES_CHANNEL}"),
+            ],
+            [
+                InlineKeyboardButton("✘ ꜱᴏᴜʀᴄᴇ ᴄᴏᴅᴇ", url="https://github.com/TheAltronX/AltronUserbot"),
+                InlineKeyboardButton("✘ ᴅᴇᴠᴇʟᴏᴘᴇʀ", url="https://t.me/Shailendra34"),
+            ],
+            [
+                InlineKeyboardButton("✘ ʜᴇʟᴘ ᴀɴᴅ ᴄᴏᴍᴍᴀɴᴅꜱ", callback_data="help_"),
+            ]
+            ]     
+    reply_markup = InlineKeyboardMarkup(buttons)
+    await message.reply_photo(photo=f"https://te.legra.ph/file/0957630b8248e79400247.jpg", caption=HOME_TEXT.format(message.from_user.first_name, message.from_user.id), reply_markup=reply_markup)
+    
+    
+@bot.on_message(filters.command(["help"], ["/", "!", "."]))
 def help_(Client, message: Message):
     HELP_TXT = """Hoi \nHere is the help menu choose your desireoption nd explorer it!!\nFor any kind of help or query Just join @Altron_X and ask your query!!"""
     
