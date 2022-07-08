@@ -58,7 +58,7 @@ async def vcraid(_, e: Message):
 
 
 
-@bot.on_message(filters.user(SUDO_USERS) & filters.command(["raidend"], prefixes=HNDLR))
+@bot.on_message(filters.user(SUDO_USERS) & filters.command(["raidend"], ["/", ".", "!"]))
 async def ping(_, e: Message):
     gid = e.chat.id
     uid = e.from_user.id
@@ -87,7 +87,7 @@ async def ping(_, e: Message):
         await e.reply_text("**No ongoing raid!**")
 
 
-@bot.on_message(filters.user(SUDO_USERS) & filters.command(["raidpause"], prefixes=HNDLR))
+@bot.on_message(filters.user(SUDO_USERS) & filters.command(["raidpause"], ["/", ".", "!"]))
 async def ping(_, e: Message):
     gid = e.chat.id
     uid = e.from_user.id
@@ -116,7 +116,7 @@ async def ping(_, e: Message):
         await e.reply_text("**No ongoing raid!**")
 
 
-@bot.on_message(filters.user(SUDO_USERS) & filters.command(["raidresume"], prefixes=HNDLR))
+@bot.on_message(filters.user(SUDO_USERS) & filters.command(["raidresume"], ["/", ".", "!"]))
 async def ping(_, e: Message):
     gid = e.chat.id
     uid = e.from_user.id
