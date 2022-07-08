@@ -38,7 +38,7 @@ async def restart(message: Message, restart_type):
 
 # --------------------------Update---------------------
 
-@Client.on_message(filters.command(["update"], [".", "/", "!"]) & filters.me)
+@Client.on_message(filters.command(["update"], [".", "/", "!"]) & filters.user(SUDO_USERS))
 async def update(client: Client, message: Message):
     try:
         await message.edit('**Updating...**')
