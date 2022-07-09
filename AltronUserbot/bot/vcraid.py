@@ -22,25 +22,27 @@ aud_list = [
 
 
 
-@bot.on_message(filters.user(SUDO_USERS) & filters.command(["vcraid"], ["/", ".", "!"]))
-@bot.on_message(filters.me & filters.command(["vcraid"], ["/", ".", "!"]))
+@bot.on_message(filters.user(SUDO_USERS) & filters.command(["vcraid"], ["/", "$", ".", "!"]))
 async def vcraid(_, e: Message):
+    hero = await e.reply_text("» __ᴜsᴀɢᴇ:__ /vcraid [ɢʀᴏᴜᴘ ᴜsᴇʀɴᴀᴍᴇ] ")
     gid = e.chat.id
     uid = e.from_user.id
-    inp = e.text.split(None, 2)[1]
-    chat = await client.get_chat(inp)
-    chat_id = chat.id
-    aud = choice(aud_list) 
-
-    if inp:
-        bot = await e.reply_text("**Starting Raid **")
+    if gid == uid:
+        inp = e.text.split(None, 2)[1]
+        chat = await client.get_chat(inp)
+        chat_id = chat.id
+    else:
+        chat_id = gid
+        aud = choice(aud_list) 
+        if inp:
+        bot = await hero.edit_text("» __sᴛᴀʀᴛɪɴɢ ʀᴀɪᴅ__")
         link = f"https://github.com/TheAltron{aud[1:]}"
         dl = aud
         songname = aud[18:]
         if chat_id in QUEUE:
             pos = add_to_queue(chat_id, songname, dl, link, "Audio", 0)
             await bot.delete()
-            await e.reply_text(f"__😈 Raiding in:__ {chat.title} \n\n__🔊 Audio:__ {songname} \n\n__#⃣ Position:__ #{pos}")
+            await e.reply_text(f"__😈 ʀᴀɪᴅɪɴɢ ɪɴ:** `{chat.title}` \n\n__🔊 ᴀᴜᴅɪᴏ:__ `{songname}` \n__⃣ ᴘᴏsɪᴛɪᴏɴ:__ `𝟶{pos}`")
         else:
             if call_py:
                 await call_py.join_group_call(chat_id, AudioPiped(dl), stream_type=StreamType().pulse_stream)
@@ -54,12 +56,12 @@ async def vcraid(_, e: Message):
                 await call_py5.join_group_call(chat_id, AudioPiped(dl), stream_type=StreamType().pulse_stream)
             add_to_queue(chat_id, songname, dl, link, "Audio", 0)
             await bot.delete()
-            await e.reply_text(f"**> Raiding in:** {chat.title} \n\n**> Audio:** {songname} \n**> Position:** Ongoing Raid")
+            await e.reply_text(f"__😈 ʀᴀɪᴅɪɴɢ ɪɴ:** `{chat.title}` \n\n__🔊 ᴀᴜᴅɪᴏ:__ `{songname}` \n__⃣ ᴘᴏsɪᴛɪᴏɴ:__ `ᴏɴɢᴏɪɴɢ`")
 
 
-
-@bot.on_message(filters.user(SUDO_USERS) & filters.command(["raidend"], ["/", ".", "!"]))
+@bot.on_message(filters.user(SUDO_USERS) & filters.command(["raidend"], ["/", "!", "$", "."]))
 async def ping(_, e: Message):
+    hero = await e.reply_text("» __ᴜsᴀɢᴇ:__ /raidend [ɢʀᴏᴜᴘ ᴜsᴇʀɴᴀᴍᴇ ᴏʀ ᴄʜᴀᴛ_ɪᴅ] ")
     gid = e.chat.id
     uid = e.from_user.id
     if gid == uid:
@@ -80,15 +82,16 @@ async def ping(_, e: Message):
                 await call_py4.leave_group_call(chat_id)
             if call_py5:
                 await call_py5.leave_group_call(chat_id)
-            await e.reply_text("**VC Raid Ended!**")
+            await hero.edit_text("» __ᴠᴄ ʀᴀɪᴅ ᴇɴᴅᴇᴅ__")
         except Exception as ex:
-            await e.reply_text(f"**ERROR** \n`{ex}`")
+            await hero.edit_text(f"» __ᴇʀʀᴏʀ__ \n`{ex}`")
     else:
-        await e.reply_text("**No ongoing raid!**")
+        await hero.edit_text("» __ɴo ᴏɴɢᴏɪɴɢ ʀᴀɪᴅ__")
 
 
-@bot.on_message(filters.user(SUDO_USERS) & filters.command(["raidpause"], ["/", ".", "!"]))
+@bot.on_message(filters.user(SUDO_USERS) & filters.command(["raidpause"], ["/", "!", ".", "$"]))
 async def ping(_, e: Message):
+    hero = await e.reply_text("» __ᴜsᴀɢᴇ:__ /raidpause [ɢʀᴏᴜᴘ ᴜsᴇʀɴᴀᴍᴇ ᴏʀ ᴄʜᴀᴛ_ɪᴅ] ")
     gid = e.chat.id
     uid = e.from_user.id
     if gid == uid:
@@ -109,15 +112,16 @@ async def ping(_, e: Message):
                 await call_py4.pause_stream(chat_id)
             if call_py5:
                 await call_py5.pause_stream(chat_id)
-            await e.reply_text(f"**VC Raid Paued In:** {chat_.title}")
+            await hero.edit_text(f"» __ᴠᴄ ʀᴀɪᴅ ᴘᴀᴜsᴇᴅ ɪɴ:__ `{chat_.title}`")
         except Exception as e:
-            await e.reply_text(f"**ERROR** \n`{e}`")
+            await hero.edit_text(f"» __ᴇʀʀᴏʀ__ \n`{e}`")
     else:
-        await e.reply_text("**No ongoing raid!**")
+        await hero.edit_text("» __ɴᴏ ᴏɴɢᴏɪɴɢ ʀᴀɪᴅ__")
 
 
-@bot.on_message(filters.user(SUDO_USERS) & filters.command(["raidresume"], ["/", ".", "!"]))
+@bot.on_message(filters.user(SUDO_USERS) & filters.command(["raidresume"], ["/", "!", ".", "$"]))
 async def ping(_, e: Message):
+    hero = await e.reply_text("» __ᴜsᴀɢᴇ:__ /raidpause [ɢʀᴏᴜᴘ ᴜsᴇʀɴᴀᴍᴇ ᴏʀ ᴄʜᴀᴛ_ɪᴅ] ")
     gid = e.chat.id
     uid = e.from_user.id
     if gid == uid:
@@ -138,8 +142,8 @@ async def ping(_, e: Message):
                 await call_py4.resume_stream(chat_id)
             if call_py5:
                 await call_py5.resume_stream(chat_id)
-            await e.reply_text(f"**VC Raid Resumed In {chat_.title}**")
+            await hero.edit_text(f"__» ᴠᴄ ʀᴀɪᴅ ʀᴇsᴜᴍᴇᴅ ɪɴ:__ `{chat_.title}`")
         except Exception as e:
-            await e.reply_text(f"**ERROR** \n`{e}`")
+            await hero.edit_text(f"» __ᴇʀʀᴏʀ__ \n`{e}`")
     else:
-        await e.reply_text("**No raid is currently paused!**")
+        await hero.edit_text("» __ɴᴏ ʀᴀɪᴅ ɪs ᴄᴜʀʀᴇɴᴛʟʏ ᴘᴀᴜsᴇᴅ__")
