@@ -27,7 +27,7 @@ async def start(client: Client, message: Message):
             ]
             ]     
     reply_markup = InlineKeyboardMarkup(buttons)
-    await message.reply_photo(photo=f"https://te.legra.ph/file/0957630b8248e79400247.jpg", caption=HOME_TEXT.format(message.from_user.first_name, message.from_user.id), reply_markup=reply_markup)
+    await message.reply_photo(photo=f"https://te.legra.ph/file/0957630b8248e79400247.jpg", caption=HOME_TEXT, reply_markup=reply_markup)
     
     
 @bot.on_message(filters.command(["help"], ["/", "!", "."]))
