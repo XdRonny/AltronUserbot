@@ -30,8 +30,6 @@ async def vcraid(_, e: Message):
     inp = e.text.split(None, 2)[1]
     chat = await client.get_chat(inp)
     chat_id = chat.id
-else:
-    chat_id = gid
     aud = choice(aud_list) 
     if inp:
         bot = await hero.edit_text("» __sᴛᴀʀᴛɪɴɢ ʀᴀɪᴅ__")
