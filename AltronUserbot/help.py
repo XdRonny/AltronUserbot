@@ -1,5 +1,5 @@
 from pyrogram import filters, Client
-from config import BOT_USERNAME, client
+from config import client
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 
 
@@ -14,9 +14,6 @@ async def start(Client, message: Message):
             [
                 InlineKeyboardButton("✘ ꜱᴜᴘᴘᴏʀᴛ", url=f"https://t.me/TheAltron"),
                 InlineKeyboardButton("✘ ᴄʜᴀɴɴᴇʟ", url=f"https://t.me/Altron_X"),
-            ],
-            [
-                InlineKeyboardButton("☆ ʜᴇʟᴘ ᴍᴇɴᴜ ☆", url="https://t.me/{BOT_USERNAME}?start=true"),
             ]
             ]     
     reply_markup = InlineKeyboardMarkup(buttons)
