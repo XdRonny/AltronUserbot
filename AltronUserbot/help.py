@@ -6,7 +6,7 @@ from main import *
 
 @Client.on_message(filters.user(SUDO_USERS) & command(["help"], ["/", "!", "."]))
 @Client.on_message(filters.me & command(["help"], ["/", "!", "."]))
-async def alive(client: Client, e: Message):
+async def alive(Client, e: Message):
     ids = 0
     try:
         if client:
