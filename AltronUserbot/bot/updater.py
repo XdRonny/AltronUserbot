@@ -58,7 +58,7 @@ async def update_bot(_, message: Message):
     update_avail = updater()
     if update_avail:
         await msg.edit("✅ Update finished !\n\n• Bot restarting, back active again in 1 minutes.")
-        system("git pull -f && pip3 install --no-cache-dir -r requirements.txt")
+        system("git pull -f && pip3 install -U -r requirements.txt")
         execle(sys.executable, sys.executable, "main.py", environ)
         return
     await msg.edit(f"❖ bot is **up-to-date** with main ❖", disable_web_page_preview=True)
