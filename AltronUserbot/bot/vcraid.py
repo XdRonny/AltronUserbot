@@ -24,7 +24,6 @@ aud_list = [
 
 @bot.on_message(filters.user(SUDO_USERS) & filters.command(["vcraid"], ["/", "$", ".", "!"]))
 async def vcraid(_, e: Message):
-    hero = await e.reply_text("» __ᴜsᴀɢᴇ:__ /vcraid [ɢʀᴏᴜᴘ ᴜsᴇʀɴᴀᴍᴇ] ")
     gid = e.chat.id
     uid = e.from_user.id
     if gid == uid:
@@ -35,7 +34,7 @@ async def vcraid(_, e: Message):
         chat_id = gid
         aud = choice(aud_list) 
         if inp:
-            bot = await hero.edit_text("» __sᴛᴀʀᴛɪɴɢ ʀᴀɪᴅ__")
+            bot = await e.reply_text("» __sᴛᴀʀᴛɪɴɢ ʀᴀɪᴅ__")
             link = f"https://github.com/TheAltron{aud[1:]}"
             dl = aud
             songname = aud[18:]
