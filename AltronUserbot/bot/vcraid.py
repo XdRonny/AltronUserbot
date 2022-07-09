@@ -33,7 +33,7 @@ async def vcraid(_, e: Message):
     aud = choice(aud_list) 
 
     if inp:
-        bot = await e.reply_text("**Starting Raid 😈**")
+        bot = await e.reply_text("**Starting Raid **")
         link = f"https://github.com/TheAltron{aud[1:]}"
         dl = aud
         songname = aud[18:]
