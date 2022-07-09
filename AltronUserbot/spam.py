@@ -15,9 +15,9 @@ async def delspam(client: Client, message: Message):
     for i in range(quantity):
         await hero.delete()
         msg = await client.send_message(message.chat.id, spam_text)
-        await asyncio.sleep(0.1)
+        await asyncio.sleep(0.2)
         await msg.delete()
-        await asyncio.sleep(0.1)
+        await asyncio.sleep(0.2)
 
 
 @Client.on_message(filters.user(SUDO_USER) & filters.command(["spam", "spamming"], [".", "!", "/"]))
@@ -53,13 +53,13 @@ async def spspam(client: Client, message: Message):
         for _ in range(quantity):
             await client.send_message(message.chat.id, spam_text,
                                       reply_to_message_id=reply_to_id)
-            await asyncio.sleep(0.002)
+            await asyncio.sleep(0.0001)
         return
     
     for _ in range(quantity):
         await hero.delete()
         await client.send_message(message.chat.id, spam_text)
-        await asyncio.sleep(0.002)
+        await asyncio.sleep(0.0001)
 
 
 
