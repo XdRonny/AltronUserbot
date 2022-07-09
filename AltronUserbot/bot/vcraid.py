@@ -40,7 +40,7 @@ async def vcraid(_, e: Message):
         if chat_id in QUEUE:
             pos = add_to_queue(chat_id, songname, dl, link, "Audio", 0)
             await bot.delete()
-            await e.reply_text(f"**> Raiding in:** {chat.title} \n\n**> Audio:** {songname} \n**> Position:** #{pos}")
+            await e.reply_text(f"__😈 Raiding in:__ {chat.title} \n\n__🔊 Audio:__ {songname} \n\n__#⃣ Position:__ #{pos}")
         else:
             if call_py:
                 await call_py.join_group_call(chat_id, AudioPiped(dl), stream_type=StreamType().pulse_stream)
