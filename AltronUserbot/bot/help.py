@@ -30,7 +30,7 @@ async def start(client: Client, message: Message):
     await message.reply_photo(photo=f"https://te.legra.ph/file/0957630b8248e79400247.jpg", caption=HOME_TEXT, reply_markup=reply_markup)
     
     
-@bot.on_message(filters.command(["help"], ["/", "!", "."]))
+@bot.on_message(filters.command(["help"], ["/", "$"]))
 def help_(Client, message: Message):
     HELP_TXT = """Hoi \nHere is the help menu choose your desireoption nd explorer it!!\nFor any kind of help or query Just join @Altron_X and ask your query!!"""
     
