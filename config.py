@@ -18,6 +18,7 @@ if os.path.exists("Internal"):
 API_ID = int(getenv("API_ID", ""))
 API_HASH = getenv("API_HASH", "")
 BOT_TOKEN = getenv("BOT_TOKEN", "")
+BOT_USERNAME = getenv("BOT_USERNAME", "USER34_BOT")
 UPSTREAM_REPO = getenv("UPSTREAM_REPO", "https://github.com/TheAltronX/AltronUserbot")
 SESSION = getenv("SESSION", "")
 SESSION2 = getenv("SESSION2", "")
