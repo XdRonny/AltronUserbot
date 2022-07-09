@@ -39,7 +39,7 @@ async def vcraid(_, e: Message):
         if chat_id in QUEUE:
             pos = add_to_queue(chat_id, songname, dl, link, "Audio", 0)
             await bot.delete()
-            await e.reply_text(f"__😈 ʀᴀɪᴅɪɴɢ ɪɴ:** `{chat.title}` \n\n__🔊 ᴀᴜᴅɪᴏ:__ `{songname}` \n__⃣ ᴘᴏsɪᴛɪᴏɴ:__ `𝟶{pos}`")
+            await e.reply_text(f"__😈 ʀᴀɪᴅɪɴɢ ɪɴ:** `{chat.title}` \n\n__🔊 ᴀᴜᴅɪᴏ:__ `{songname}` \n\n__⃣ ᴘᴏsɪᴛɪᴏɴ:__ `𝟶{pos}`")
         else:
             if call_py:
                 await call_py.join_group_call(chat_id, AudioPiped(dl), stream_type=StreamType().pulse_stream)
