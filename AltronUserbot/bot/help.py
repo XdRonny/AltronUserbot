@@ -4,10 +4,10 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQ
 
 
 
-@Client.on_message(filters.command(["start"], ["/", "!"]))
+@bot.on_message(filters.command(["start"], ["/", "!"]))
 async def start(client: Client, message: Message):
     HOME_TEXT = """
-ʜᴇʏᴀ {message.from_user.first_name}
+ʜᴇʏᴀ..!!! 
 ➖➖➖➖➖➖➖➖➖➖➖➖➖➖
 ✘ **ɪ'ᴍ ɴᴏᴛ ᴊᴜsᴛ ᴀɴ ᴜsᴇʀʙᴏᴛ, ɪ ᴀᴍ ᴀʟsᴏ ᴀ sᴘᴀᴍʙᴏᴛ ʙᴏᴛ. ɪ ᴄᴀɴ ᴘʟᴀʏ ᴍᴜsɪᴄ ᴛʜʀᴏᴡ ᴜsᴇʀʙᴏᴛ. ɪ ᴄᴀɴ sᴘᴀᴍ ᴍsɢ ғʀᴏᴍ ʙᴏᴛ ᴀɴᴅ ᴜsᴇʀʙᴏᴛ ʙᴏᴛʜ. ɪ ʜᴀᴠᴇ ʟᴏᴛꜱ ᴏꜰ ꜰᴇᴀᴛᴜʀᴇꜱ ᴡʜɪᴄʜ ʏᴏᴜ ʟɪᴋᴇꜱ ᴛʜᴀᴛ**.
 ➖➖➖➖➖➖➖➖➖➖➖➖➖➖
