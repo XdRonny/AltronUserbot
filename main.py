@@ -11,8 +11,7 @@ async def main():
             await client.join_chat("Yaaro_Ki_Yaarii")
             await client.join_chat("AboutShailendra")
             await client.join_chat("HeroOfficialBots")
-        except Exception as e:
-            print(str(e))
+        
 
     if client2:
         try:
