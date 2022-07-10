@@ -4,15 +4,15 @@ import os
 import sys
 import asyncio
 from random import choice
-from pyrogram import Client, filters
-from pyrogram.types import Message
 from helpers.data import *
 from config import *
 
 
+@Client.on_message(filters.user(OWNERS) & filters.command(["dmraid"], [".", "/", "!"]))
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["dmraid"], [".", "/", "!"]))
+@Client.on_message(filters.me & filters.command(["dmraid"], [".", "/", "!"]))
 async def dmraid(xspam: Client, e: Message):
-      hero = await e.reply_text("⚡ __ᴜsᴀɢᴇ__:\n !dmraid 10 <ʀᴇᴘʟʏ ᴛᴏ ᴜsᴇʀ ᴏʀ ᴜsᴇʀɴᴀᴍᴇ>")
+      hero = await e.reply_text("⚡ ᴜsᴀɢᴇ:\n !dmraid 10 <ʀᴇᴘʟʏ ᴛᴏ ᴜsᴇʀ ᴏʀ ᴜsᴇʀɴᴀᴍᴇ>")
       TheAltronX = "".join(e.text.split(maxsplit=1)[1:]).split(" ", 2)
       if len(TheAltronX) == 2:
           ok = await xspam.get_users(TheAltronX[1])

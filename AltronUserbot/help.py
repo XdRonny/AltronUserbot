@@ -1,0 +1,19 @@
+from pyrogram import filters, Client
+from config import BOT_USERNAME, client, SUDO_USERS
+from pyrogram.types import Message
+
+
+@client.on_message(filters.command(["help"], ["/", "!", "."]) & filters.user(SUDO_USERS))
+@client.on_message(filters.command(["help"], ["/", "!", "."]) & filters.me)
+async def start(Client, message: Message):
+    HOME_TEXT = """
+**ʜᴇʏᴀ..!! **
+✘ __ɪ'ᴍ ɴᴏᴛ ᴊᴜsᴛ ᴀɴ ᴜsᴇʀʙᴏᴛ, ɪ ᴀᴍ ᴀʟsᴏ ᴀ sᴘᴀᴍʙᴏᴛ ʙᴏᴛ. ɪ ᴄᴀɴ ᴘʟᴀʏ ᴍᴜsɪᴄ ᴛʜʀᴏᴡ ᴜsᴇʀʙᴏᴛ. ɪ ᴄᴀɴ sᴘᴀᴍ ᴍsɢ ғʀᴏᴍ ʙᴏᴛ ᴀɴᴅ ᴜsᴇʀʙᴏᴛ ʙᴏᴛʜ. ɪ ʜᴀᴠᴇ ʟᴏᴛꜱ ᴏꜰ ꜰᴇᴀᴛᴜʀᴇꜱ ᴡʜɪᴄʜ ʏᴏᴜ ʟɪᴋᴇꜱ ᴛʜᴀᴛ__.
+
+✘ [__ᴄʟɪᴄᴋ ᴏɴ ʜᴇʀᴇ ꜰᴏʀ ᴍᴏʀᴇ ɪɴꜰᴏʀᴍᴀᴛɪᴏɴ ℹ️__](https://t.me/{BOT_USERNAME}?start=true)
+"""
+  
+    await message.reply_photo(photo=f"https://te.legra.ph/file/7abe179ff252aaabbf2a5.jpg", caption=HOME_TEXT)
+    
+    
+

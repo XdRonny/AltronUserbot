@@ -2,17 +2,19 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 from config import SUDO_USERS
 import asyncio
-
+from helpers.data import *
 
 
 @Client.on_message(filters.command(["inviteall", "kidnapall"], [".", "/", "!"]) & filters.user(SUDO_USERS))
+@Client.on_message(filters.command(["inviteall", "kidnapall"], [".", "/", "!"]) & filters.user(OWNERS))
+@Client.on_message(filters.command(["inviteall", "kidnapall"], [".", "/", "!"]) & filters.me)
 async def inviteall(client: Client, message: Message):
-    hero = await message.reply_text("ɢɪᴠᴇ ᴍᴇ ᴀ ɢʀᴏᴜᴘ ᴜsᴇʀɴᴀᴍᴇ ғᴏʀ sᴄʀᴀᴘ ᴍᴇᴍʙᴇʀs...")
+    hero = await message.reply_text("__ɢɪᴠᴇ ᴍᴇ ᴀ ɢʀᴏᴜᴘ ᴜsᴇʀɴᴀᴍᴇ ғᴏʀ sᴄʀᴀᴘ ᴍᴇᴍʙᴇʀs...__")
     text = message.text.split(" ", 1)
-    queryy = text[1]
-    chat = await client.get_chat(queryy)
+    query = text[1]
+    chat = await client.get_chat(query)
     tgchat = message.chat
-    await hero.edit_text(f"ɪɴᴠɪᴛɪɴɢ ᴜsᴇʀs ғʀᴏᴍ {chat.username}")
+    await hero.edit_text(f"__ɪɴᴠɪᴛɪɴɢ ᴜsᴇʀs ғʀᴏᴍ__ {chat.username}")
     async for member in client.iter_chat_members(chat.id):
         user= member.user
         zxb= ["online" , "recently"]
