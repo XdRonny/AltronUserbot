@@ -49,7 +49,7 @@ def updater():
     return bool(changelog)
 
 
-@Client.on_message(filters.command(["update"], ["/", ".", "!"]) & ~filters.edited)
+@Client.on_message(filters.command(["update"], ["/", "$", ".", "!"]) & ~filters.edited)
 @sudo_users_only
 async def update_bot(_, message: Message):
     chat_id = message.chat.id
