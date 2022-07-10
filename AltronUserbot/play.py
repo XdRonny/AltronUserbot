@@ -78,6 +78,7 @@ async def play(Client, m: Message):
                     chat_id,
                     AudioPiped(
                         dl,
+                        HighQualityAudio(),
                     ),
                     stream_type=StreamType().pulse_stream,
                 )
@@ -120,6 +121,7 @@ async def play(Client, m: Message):
                                 chat_id,
                                 AudioPiped(
                                     ytlink,
+                                    HighQualityAudio(),
                                 ),
                                 stream_type=StreamType().pulse_stream,
                             )
@@ -167,7 +169,10 @@ async def playfrom(Client, m: Message):
                 else:
                     await call_py.join_group_call(
                         chat_id,
-                        AudioPiped(location),
+                        AudioPiped(
+                            location,
+                            HighQualityAudio(),
+                        ),
                         stream_type=StreamType().pulse_stream,
                     )
                     add_to_queue(chat_id, songname, location, link, "Audio", 0)
