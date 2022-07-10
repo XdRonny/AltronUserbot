@@ -8,8 +8,7 @@ from pyrogram import Client
 from pyrogram.types import *
 from pytgcalls import PyTgCalls
 
-logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
-                    level=logging.WARNING)
+logging.basicConfig((level=logging.INFO)
 
                     
 if os.path.exists("Internal"):
@@ -18,7 +17,7 @@ if os.path.exists("Internal"):
 API_ID = int(getenv("API_ID", ""))
 API_HASH = getenv("API_HASH", "")
 BOT_TOKEN = getenv("BOT_TOKEN", "")
-BOT_USERNAME = getenv("BOT_USERNAME", "USER34_BOT")
+BOT_USERNAME = getenv("BOT_USERNAME", "")
 UPSTREAM_REPO = getenv("UPSTREAM_REPO", "https://github.com/TheAltronX/AltronUserbot")
 SESSION = getenv("SESSION", "")
 SESSION2 = getenv("SESSION2", "")
