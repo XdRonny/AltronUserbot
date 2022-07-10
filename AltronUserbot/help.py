@@ -13,7 +13,7 @@ async def start(Client, message: Message):
 ✘ [__ᴄʟɪᴄᴋ ᴏɴ ʜᴇʀᴇ ꜰᴏʀ ᴍᴏʀᴇ ɪɴꜰᴏʀᴍᴀᴛɪᴏɴ ℹ️__](https://t.me/{BOT_USERNAME}?start=true)
 """
   
-    await message.reply_photo(photo=f"https://te.legra.ph/file/7abe179ff252aaabbf2a5.jpg", caption=HOME_TEXT)
+    await message.reply_text(HOME_TEXT)
     
     
 
