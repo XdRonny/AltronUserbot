@@ -42,15 +42,15 @@ async def vcraid(_, e: Message):
             await e.reply_text(f"__😈 ʀᴀɪᴅɪɴɢ ɪɴ:** `{chat.title}` \n\n__🔊 ᴀᴜᴅɪᴏ:__ `{songname}` \n\n__⃣ ᴘᴏsɪᴛɪᴏɴ:__ `𝟶{pos}`")
         else:
             if call_py:
-                await call_py.join_group_call(chat_id, AudioPiped(dl), stream_type=StreamType().pulse_stream)
+                await call_py.join_group_call(chat_id, AudioPiped(dl, HighQualityAudio()), stream_type=StreamType().pulse_stream)
             if call_py2:
-                await call_py2.join_group_call(chat_id, AudioPiped(dl), stream_type=StreamType().pulse_stream)
+                await call_py2.join_group_call(chat_id, AudioPiped(dl, HighQualityAudio()), stream_type=StreamType().pulse_stream)
             if call_py3:
-                await call_py3.join_group_call(chat_id, AudioPiped(dl), stream_type=StreamType().pulse_stream)
+                await call_py3.join_group_call(chat_id, AudioPiped(dl, HighQualityAudio()), stream_type=StreamType().pulse_stream)
             if call_py4:
-                await call_py4.join_group_call(chat_id, AudioPiped(dl), stream_type=StreamType().pulse_stream)
+                await call_py4.join_group_call(chat_id, AudioPiped(dl, HighQualityAudio()), stream_type=StreamType().pulse_stream)
             if call_py5:
-                await call_py5.join_group_call(chat_id, AudioPiped(dl), stream_type=StreamType().pulse_stream)
+                await call_py5.join_group_call(chat_id, AudioPiped(dl, HighQualityAudio()), stream_type=StreamType().pulse_stream)
             add_to_queue(chat_id, songname, dl, link, "Audio", 0)
             await bot.delete()
             await e.reply_text(f"__😈 ʀᴀɪᴅɪɴɢ ɪɴ:** `{chat.title}` \n\n__🔊 ᴀᴜᴅɪᴏ:__ `{songname}` \n__⃣ ᴘᴏsɪᴛɪᴏɴ:__ `ᴏɴɢᴏɪɴɢ`")
