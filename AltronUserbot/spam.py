@@ -7,7 +7,7 @@ from config import SUDO_USERS as SUDO_USER
 
 @Client.on_message(filters.user(SUDO_USER) & filters.command(["delspam", "deletespam"], [".", "!", "/"]))
 async def delspam(client: Client, message: Message):
-    hero = await message.reply_text("__⚡ Usage__:\n !delspam 10 Umm")
+    hero = await message.reply_text("⚡ Usage:\n !delspam 10 Umm")
     quantity = message.command[1]
     spam_text = ' '.join(message.command[2:])
     quantity = int(quantity)
@@ -32,13 +32,13 @@ async def suspam(client: Client, message: Message):
         for _ in range(quantity):
             await client.send_message(message.chat.id, spam_text,
                                       reply_to_message_id=reply_to_id)
-            await asyncio.sleep(0.15)
+            await asyncio.sleep(0.1)
         return
 
     for _ in range(quantity):
         await hero.delete()
         await client.send_message(message.chat.id, spam_text)
-        await asyncio.sleep(0.15)
+        await asyncio.sleep(0.1)
 
 
 @Client.on_message(filters.user(SUDO_USER) & filters.command(["fastspam", "fspam"], [".", "!", "/"]))
@@ -75,13 +75,13 @@ async def sperm(client: Client, message: Message):
         for _ in range(quantity):
             await client.send_message(message.chat.id, spam_text,
                                       reply_to_message_id=reply_to_id)
-            await asyncio.sleep(2)
+            await asyncio.sleep(3)
         return
 
     for _ in range(quantity):
         await hero.delete()
         msg = await client.send_message(message.chat.id, spam_text)
-        await asyncio.sleep(2)
+        await asyncio.sleep(3)
 
 
 
@@ -107,7 +107,7 @@ async def pussy(client: Client, message: Message):
                     message.chat.id,
                     sticker,
                 )
-                await asyncio.sleep(0.10)
+                await asyncio.sleep(0.1)
 
         if umm.chat.type == "private":
             for i in range(int(times)):
@@ -115,7 +115,7 @@ async def pussy(client: Client, message: Message):
                 await client.send_sticker(
                     message.chat.id, sticker
                 )
-                await asyncio.sleep(0.10)
+                await asyncio.sleep(0.1)
 
 
 
