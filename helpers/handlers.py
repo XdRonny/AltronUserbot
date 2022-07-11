@@ -58,4 +58,8 @@ async def on_end_handler(_, update: Update):
             await client.send_message(
                 chat_id, "__ᴇᴍᴘᴛʏ ǫᴜᴇᴜᴇ, ʟᴇᴀᴠɪɴɢ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ__"
             )
-            
+        else:
+            await client.send_message(
+                chat_id,
+                "__ᴇᴍᴘᴛʏ ǫᴜᴇᴜᴇ, ʟᴇᴀᴠɪɴɢ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ__",
+            )
