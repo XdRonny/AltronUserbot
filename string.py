@@ -1,7 +1,7 @@
 import os
 os.system("pip install telethon")
 
-os.system("pip3 install -U pyrogram")
+os.system("pip3 install -U pyrogram==1.4.16")
 
 from telethon.sync import TelegramClient
 from telethon.sessions import StringSession 
