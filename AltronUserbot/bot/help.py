@@ -1,3 +1,5 @@
+# POWERED BY HERO
+
 from pyrogram import filters, Client
 from config import bot
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, Message
