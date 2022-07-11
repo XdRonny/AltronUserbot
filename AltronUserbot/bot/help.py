@@ -29,7 +29,7 @@ async def start(client: Client, message: Message):
     await message.reply_photo(photo=f"https://te.legra.ph/file/7abe179ff252aaabbf2a5.jpg", caption=HOME_TEXT, reply_markup=reply_markup)
     await message.delete()
     
-@bot.on_message(filters.command(["help"], ["/", "!", "$"]))
+@bot.on_message(filters.command(["help"], ["/", "$"]))
 def help_(Client, message: Message):
     HELP_TXT = """🤖 ʜᴏɪ..!!! 
 __ʜᴇʀᴇ ɪs ᴛʜᴇ ʜᴇʟᴘ ᴍᴇɴᴜ ᴄʜᴏᴏsᴇ ʏᴏᴜʀ ᴅᴇsɪʀᴇ ᴏᴘᴛɪᴏɴ ɴᴅ ᴇxᴘʟᴏʀᴇ ɪᴛ. \nғᴏʀ ᴀɴʏ ᴋɪɴᴅ ᴏғ ʜᴇʟᴘ ᴏʀ ǫᴜᴇʀʏ ᴊᴜsᴛ ᴊᴏɪɴ @Altron_X ᴀɴᴅ ᴀsᴋ ʏᴏᴜʀ ǫᴜᴇʀʏ. __"""
