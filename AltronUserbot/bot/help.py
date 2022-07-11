@@ -90,7 +90,7 @@ __ʜᴇʀᴇ ɪs ᴛʜᴇ ʜᴇʟᴘ ᴍᴇɴᴜ ᴄʜᴏᴏsᴇ ʏᴏᴜʀ ᴅ�
 ➖➖➖➖➖➖➖➖➖➖➖➖➖➖
 ✘ __ᴄʟɪᴄᴋ ᴏɴ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴ ꜰᴏʀ ᴍᴏʀᴇ ɪɴꜰᴏʀᴍᴀᴛɪᴏɴ ℹ️__.
 """
-    buttons = [
+        BUTTON = [
             [
                 InlineKeyboardButton("✘ ꜱᴜᴘᴘᴏʀᴛ", url=f"https://t.me/{GROUP_SUPPORT}"),
                 InlineKeyboardButton("✘ ᴄʜᴀɴɴᴇʟ", url=f"https://t.me/{UPDATES_CHANNEL}"),
@@ -102,9 +102,12 @@ __ʜᴇʀᴇ ɪs ᴛʜᴇ ʜᴇʟᴘ ᴍᴇɴᴜ ᴄʜᴏᴏsᴇ ʏᴏᴜʀ ᴅ�
             [
                 InlineKeyboardButton("✘ ʜᴇʟᴘ ᴀɴᴅ ᴄᴏᴍᴍᴀɴᴅꜱ", callback_data="help_"),
             ]
-            ]     
-    reply_markup = InlineKeyboardMarkup(buttons)
-    await message.reply_photo(photo=f"https://te.legra.ph/file/7abe179ff252aaabbf2a5.jpg", caption=HOME_TEXT, reply_markup=reply_markup)
+        ]     
+        reply_markup = InlineKeyboardMarkup(BUTTON)
+        callback.edit_message_text(
+        HOME_TEXT,
+        reply_markup=reply_markup
+        )
     elif callback.data == "vc":
         B_HELP = """
 » ᴜsᴇʀʙᴏᴛ ᴘʟᴀʏ ᴍᴇɴᴜ:-
