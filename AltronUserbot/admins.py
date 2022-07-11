@@ -42,7 +42,7 @@ async def skip(client, m: Message):
             await m.reply(OP)
 
 
-@Client.on_message(commandpro(["!end", "!e", "/end", "!stop", ".stop", "/stop", "E", "End", "/e", "Stop"]))
+@Client.on_message(commandpro(["!end", "!e", "/end", "!stop", ".stop", "/stop", "E", "End", "/e", "-"]))
 @errors
 @sudo_users_only
 async def stop(client, m: Message):
