@@ -9,7 +9,7 @@ from helpers.data import *
 from config import *
 
 
-@Client.on_message(filters.user(SUDO_USERS) & filters.command(["raid"], [".", "/", "!"]))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["raid"], [".", "+", "!"]))
 async def dmraid(xspam: Client, e: Message):
       hero = await e.reply_text("⚡ __ᴜsᴀɢᴇ__:\n !raid 10 <ʀᴇᴘʟʏ ᴛᴏ ᴜsᴇʀ ᴏʀ ᴜsᴇʀɴᴀᴍᴇ>")   
       TheAltronX = "".join(e.text.split(maxsplit=1)[1:]).split(" ", 2)
