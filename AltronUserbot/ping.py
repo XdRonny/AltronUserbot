@@ -3,7 +3,7 @@ from pyrogram import filters, Client
 import requests
 from config import *
 
-# ping checker
+# PING CHECKER BY HERO
 
 @Client.on_message(filters.command(["ping"], ["/", ".", "!"]) & filters.user(SUDO_USERS))
 @Client.on_message(filters.command(["ping"], ["/", ".", "!"]) & filters.me)
