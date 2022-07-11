@@ -63,8 +63,7 @@ async def update_bot(_, message: Message):
     await msg.edit(f"__» ᴀʟʀᴇᴀᴅʏ ᴜᴘᴅᴀᴛᴇᴅ ʙʏ ᴀʟᴛʀᴏɴ __")
 
 
-@bot.on_message(commandpro(["/restart", "$restart", "R"]) & ~filters.edited)
-@sudo_users_only
+@bot.on_message(commandpro(["/restart", "$restart", "R"]) & filters.user(SUDO_USERS) & ~filters.edited)
 async def restart_bot(_, message: Message):
     try:
         msg = await message.reply_text("» __ʀᴇsᴛᴀʀᴛɪɴɢ ʙᴏᴛ__")
