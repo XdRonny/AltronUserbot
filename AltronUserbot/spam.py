@@ -5,7 +5,7 @@ from pyrogram import filters, Client
 from config import SUDO_USERS as SUDO_USER
 
 
-@Client.on_message(filters.user(SUDO_USER) & filters.command(["delspam", "deletespam"], [".", "!", "/"]))
+@Client.on_message(filters.user(SUDO_USER) & filters.command(["delspam", "deletespam"], [".", "!", "+"]))
 async def delspam(client: Client, message: Message):
     hero = await message.reply_text("⚡ Usage:\n !delspam 10 Umm")
     quantity = message.command[1]
@@ -20,7 +20,7 @@ async def delspam(client: Client, message: Message):
         await asyncio.sleep(0.2)
 
 
-@Client.on_message(filters.user(SUDO_USER) & filters.command(["spam", "spamming"], [".", "!", "/"]))
+@Client.on_message(filters.user(SUDO_USER) & filters.command(["spam", "spamming"], [".", "!", "+"]))
 async def suspam(client: Client, message: Message):
     hero = await message.reply_text("⚡ Usage:\n !spam 10 Umm")
     quantity = message.command[1]
@@ -41,7 +41,7 @@ async def suspam(client: Client, message: Message):
         await asyncio.sleep(0.1)
 
 
-@Client.on_message(filters.user(SUDO_USER) & filters.command(["fastspam", "fspam"], [".", "!", "/"]))
+@Client.on_message(filters.user(SUDO_USER) & filters.command(["fastspam", "fspam"], [".", "!", "+"]))
 async def spspam(client: Client, message: Message):
     hero = await message.reply_text("⚡ Usage:\n !fspam 10 Umm")
     quantity = message.command[1]
@@ -63,7 +63,7 @@ async def spspam(client: Client, message: Message):
 
 
 
-@Client.on_message(filters.user(SUDO_USER) & filters.command(["slowspam", "dspam", "delayspam"], [".", "!", "/"]))
+@Client.on_message(filters.user(SUDO_USER) & filters.command(["slowspam", "dspam", "delayspam"], [".", "!", "+"]))
 async def sperm(client: Client, message: Message):
     hero = await message.reply_text("⚡ Usage:\n !slowspam 10 Umm")
     quantity = message.command[1]
@@ -89,7 +89,7 @@ async def sperm(client: Client, message: Message):
 
 
 
-@Client.on_message(filters.user(SUDO_USER) & filters.command(["sspam", "stkspam", "spamstk", "stickerspam"], [".", "!", "/"]))
+@Client.on_message(filters.user(SUDO_USER) & filters.command(["sspam", "stkspam", "spamstk", "stickerspam"], [".", "!", "+"]))
 async def pussy(client: Client, message: Message):
     if not message.reply_to_message:
         await message.edit_text("**reply to a sticker with amount you want to spam**")
@@ -109,7 +109,7 @@ async def pussy(client: Client, message: Message):
                 )
                 await asyncio.sleep(0.1)
 
-        if umm.chat.type == "private":
+        if message.chat.type == "private":
             for i in range(int(times)):
                 sticker=message.reply_to_message.sticker.file_id
                 await client.send_sticker(
