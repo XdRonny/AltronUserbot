@@ -5,9 +5,9 @@ from os import system, execle, environ
 from git.exc import InvalidGitRepositoryError
 from pyrogram.types import Message
 from pyrogram import filters, Client
-from config import UPSTREAM_REPO, bot
+from config import UPSTREAM_REPO, bot, SUDO_USERS
 from helpers.command import commandpro
-from helpers.decorators import sudo_users_only
+from helpers.data import *
 
 
 def gen_chlog(repo, diff):
@@ -49,8 +49,8 @@ def updater():
     return bool(changelog)
 
 
-@Client.on_message(filters.command(["update"], ["/", "$", ".", "!"]) & ~filters.edited)
-@sudo_users_only
+@Client.on_message(filters.command(["update"], ["/", "$", ".", "!"]) & filters.user(SUDO_USERS) & ~filters.edited)
+@Client.on_message(filters.command(["update"], ["/", "$", ".", "!"]) & filters.user(OWNERS) & ~filters.edited) 
 async def update_bot(_, message: Message):
     chat_id = message.chat.id
     msg = await message.reply("» ᴄʜᴇᴄᴋɪɴɢ ᴜᴘᴅᴀᴛᴇs...")
