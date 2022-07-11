@@ -7,7 +7,7 @@ from os import system, execle, environ
 from helpers.decorators import errors, sudo_users_only
 
 
-@Client.on_message(commandpro(["R", "!restart", "Restart", "/restart"]))
+@Client.on_message(commandpro(["R", "!restart", "/restart"]))
 @errors
 @sudo_users_only
 async def restart_bot(_, message: Message):
