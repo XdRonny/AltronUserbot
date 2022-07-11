@@ -1,5 +1,3 @@
-# POWERED BY HERO
-
 from pyrogram import filters, Client
 from config import bot
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, Message
@@ -48,7 +46,6 @@ __ʜᴇʀᴇ ɪs ᴛʜᴇ ʜᴇʟᴘ ᴍᴇɴᴜ ᴄʜᴏᴏsᴇ ʏᴏᴜʀ ᴅ�
         ],
         [
             InlineKeyboardButton(text="ʀᴀɪᴅ", callback_data="raid"), 
-            InlineKeyboardButton(text="ᴅᴇᴠs", callback_data="dev"), 
             InlineKeyboardButton(text="ᴀᴅᴠᴀɴᴄᴇ", callback_data="advance"), 
         ],   
         [
@@ -74,7 +71,6 @@ __ʜᴇʀᴇ ɪs ᴛʜᴇ ʜᴇʟᴘ ᴍᴇɴᴜ ᴄʜᴏᴏsᴇ ʏᴏᴜʀ ᴅ�
         ],
         [
             InlineKeyboardButton(text="ʀᴀɪᴅ", callback_data="raid"),
-            InlineKeyboardButton(text="ᴅᴇᴠs", callback_data="dev"),
             InlineKeyboardButton(text="ᴀᴅᴠᴀɴᴄᴇ", callback_data="advance"), 
         ],   
         [
@@ -116,12 +112,12 @@ __ʜᴇʀᴇ ɪs ᴛʜᴇ ʜᴇʟᴘ ᴍᴇɴᴜ ᴄʜᴏᴏsᴇ ʏᴏᴜʀ ᴅ�
         B_HELP = """
 » ᴜsᴇʀʙᴏᴛ ᴘʟᴀʏ ᴍᴇɴᴜ:-
         
-!p - ᴜsᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴛᴏ ᴘʟᴀʏ ᴍᴜsɪᴄ
-!e - ᴜsᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴛᴏ ᴇɴᴅ ᴍᴜsɪᴄ
-!s - ᴜsᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴛᴏ sᴋɪᴘ ᴍᴜsɪᴄ
-!pause - ᴜsᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴛᴏ ᴘᴀᴜsᴇ ᴍᴜsɪᴄ
-!resume - ᴜsᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴛᴏ ʀᴇsᴜᴍᴇ ᴍᴜsɪᴄ
-!playfrom [ɢʀᴏᴜᴘ ᴜsᴇʀɴᴀᴍᴇ] - ᴜsᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴛᴏ ᴘʟᴀʏ sᴏɴɢs ғʀᴏᴍ ᴀɴᴏᴛʜᴇʀ ɢʀᴏᴜᴘ
+/p - ᴜsᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴛᴏ ᴘʟᴀʏ ᴍᴜsɪᴄ
+/e - ᴜsᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴛᴏ ᴇɴᴅ ᴍᴜsɪᴄ
+/s - ᴜsᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴛᴏ sᴋɪᴘ ᴍᴜsɪᴄ
+/pause - ᴜsᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴛᴏ ᴘᴀᴜsᴇ ᴍᴜsɪᴄ
+/resume - ᴜsᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴛᴏ ʀᴇsᴜᴍᴇ ᴍᴜsɪᴄ
+/playfrom [ɢʀᴏᴜᴘ ᴜsᴇʀɴᴀᴍᴇ] - ᴜsᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴛᴏ ᴘʟᴀʏ sᴏɴɢs ғʀᴏᴍ ᴀɴᴏᴛʜᴇʀ ɢʀᴏᴜᴘ
 """
         BUTTON = [
             [
@@ -154,25 +150,6 @@ __ʜᴇʀᴇ ɪs ᴛʜᴇ ʜᴇʟᴘ ᴍᴇɴᴜ ᴄʜᴏᴏsᴇ ʏᴏᴜʀ ᴅ�
             SPM_HELP,
             reply_markup=InlineKeyboardMarkup(BUTTON)
         )
-    elif callback.data == "dev":
-        DEV_HELP = """
-✘ ᴜsᴇʀʙᴏᴛ ᴅᴇᴠᴇʟᴏᴘᴇʀs:-        
-
-»𝟷. 𝐒ʜᴀɪʟᴇɴᴅʀᴀ
-»𝟸. 𝐏ʏᴛʜᴏɴx
-»𝟹. 𝐑ᴜᴅʀᴀ
-
-"""
-        BUTTON = [
-            [
-                InlineKeyboardButton(text="🗑 ᴄʟᴏsᴇ", callback_data="close"),
-                InlineKeyboardButton(text="⬅ ʙᴀᴄᴋ", callback_data="help_"),
-            ],
-        ]
-        callback.edit_message_text(
-            DEV_HELP,
-            reply_markup=InlineKeyboardMarkup(BUTTON)
-        )        
     elif callback.data == "bot_cmd":
         A_HELP = """
 ʏᴏᴜʀ ʙᴏᴛ ᴛᴏᴋᴇɴ ɪs ᴜsᴇᴅ ғᴏʀ ᴛʜᴇsᴇ ᴄᴏᴍᴍᴀɴᴅs        
