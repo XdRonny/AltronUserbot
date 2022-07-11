@@ -8,7 +8,7 @@ async def start(client: Client, message: Message):
     HOME_TEXT = """
 🤖 **ʜᴇʏᴀ..!!! 
 ➖➖➖➖➖➖➖➖➖➖➖➖➖➖
-✘ __ɪ'ᴍ ɴᴏᴛ ᴊᴜsᴛ ᴀɴ ᴜsᴇʀʙᴏᴛ, ɪ ᴀᴍ ᴀʟsᴏ ᴀ sᴘᴀᴍʙᴏᴛ ʙᴏᴛ. ɪ ᴄᴀɴ ᴘʟᴀʏ ᴍᴜsɪᴄ ᴛʜʀᴏᴡ ᴜsᴇʀʙᴏᴛ. ɪ ᴄᴀɴ sᴘᴀᴍ ᴍsɢ ғʀᴏᴍ ʙᴏᴛ ᴀɴᴅ ᴜsᴇʀʙᴏᴛ ʙᴏᴛʜ. ɪ ʜᴀᴠᴇ ʟᴏᴛꜱ ᴏꜰ ꜰᴇᴀᴛᴜʀᴇꜱ ᴡʜɪᴄʜ ʏᴏᴜ ʟɪᴋᴇꜱ ᴛʜᴀᴛ__.
+✘ __ɪ'ᴍ ɴᴏᴛ ᴊᴜsᴛ ᴀɴ ᴜsᴇʀʙᴏᴛ, ɪ ᴀᴍ ᴀʟsᴏ ᴀ sᴘᴀᴍʙᴏᴛ. ɪ ᴄᴀɴ ᴘʟᴀʏ ᴍᴜsɪᴄ ᴛʜʀᴏᴡ ᴜsᴇʀʙᴏᴛ. ɪ ᴄᴀɴ sᴘᴀᴍ ᴍsɢ ғʀᴏᴍ ʙᴏᴛ ᴀɴᴅ ᴜsᴇʀʙᴏᴛ ʙᴏᴛʜ. ɪ ʜᴀᴠᴇ ʟᴏᴛꜱ ᴏꜰ ꜰᴇᴀᴛᴜʀᴇꜱ ᴡʜɪᴄʜ ʏᴏᴜ ʟɪᴋᴇꜱ ᴛʜᴀᴛ__.
 ➖➖➖➖➖➖➖➖➖➖➖➖➖➖
 ✘ __ᴄʟɪᴄᴋ ᴏɴ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴ ꜰᴏʀ ᴍᴏʀᴇ ɪɴꜰᴏʀᴍᴀᴛɪᴏɴ ℹ️__.
 """
@@ -27,7 +27,7 @@ async def start(client: Client, message: Message):
             ]     
     reply_markup = InlineKeyboardMarkup(buttons)
     await message.reply_photo(photo=f"https://te.legra.ph/file/7abe179ff252aaabbf2a5.jpg", caption=HOME_TEXT, reply_markup=reply_markup)
-    
+    await message.delete()
     
 @bot.on_message(filters.command(["help"], ["/", "!", "$"]))
 def help_(Client, message: Message):
@@ -46,6 +46,7 @@ __ʜᴇʀᴇ ɪs ᴛʜᴇ ʜᴇʟᴘ ᴍᴇɴᴜ ᴄʜᴏᴏsᴇ ʏᴏᴜʀ ᴅ�
         ],
         [
             InlineKeyboardButton(text="ʀᴀɪᴅ", callback_data="raid"), 
+            InlineKeyboardButton(text="ᴅᴇᴠs", callback_data="dev"), 
             InlineKeyboardButton(text="ᴀᴅᴠᴀɴᴄᴇ", callback_data="advance"), 
         ],   
         [
@@ -71,6 +72,7 @@ __ʜᴇʀᴇ ɪs ᴛʜᴇ ʜᴇʟᴘ ᴍᴇɴᴜ ᴄʜᴏᴏsᴇ ʏᴏᴜʀ ᴅ�
         ],
         [
             InlineKeyboardButton(text="ʀᴀɪᴅ", callback_data="raid"),
+            InlineKeyboardButton(text="ᴅᴇᴠs", callback_data="dev"),
             InlineKeyboardButton(text="ᴀᴅᴠᴀɴᴄᴇ", callback_data="advance"), 
         ],   
         [
@@ -86,7 +88,7 @@ __ʜᴇʀᴇ ɪs ᴛʜᴇ ʜᴇʟᴘ ᴍᴇɴᴜ ᴄʜᴏᴏsᴇ ʏᴏᴜʀ ᴅ�
         HOME_TEXT = """
 🤖 **ʜᴇʏᴀ..!!! 
 ➖➖➖➖➖➖➖➖➖➖➖➖➖➖
-✘ __ɪ'ᴍ ɴᴏᴛ ᴊᴜsᴛ ᴀɴ ᴜsᴇʀʙᴏᴛ, ɪ ᴀᴍ ᴀʟsᴏ ᴀ sᴘᴀᴍʙᴏᴛ ʙᴏᴛ. ɪ ᴄᴀɴ ᴘʟᴀʏ ᴍᴜsɪᴄ ᴛʜʀᴏᴡ ᴜsᴇʀʙᴏᴛ. ɪ ᴄᴀɴ sᴘᴀᴍ ᴍsɢ ғʀᴏᴍ ʙᴏᴛ ᴀɴᴅ ᴜsᴇʀʙᴏᴛ ʙᴏᴛʜ. ɪ ʜᴀᴠᴇ ʟᴏᴛꜱ ᴏꜰ ꜰᴇᴀᴛᴜʀᴇꜱ ᴡʜɪᴄʜ ʏᴏᴜ ʟɪᴋᴇꜱ ᴛʜᴀᴛ__.
+✘ __ɪ'ᴍ ɴᴏᴛ ᴊᴜsᴛ ᴀɴ ᴜsᴇʀʙᴏᴛ, ɪ ᴀᴍ ᴀʟsᴏ ᴀ sᴘᴀᴍʙᴏᴛ. ɪ ᴄᴀɴ ᴘʟᴀʏ ᴍᴜsɪᴄ ᴛʜʀᴏᴡ ᴜsᴇʀʙᴏᴛ. ɪ ᴄᴀɴ sᴘᴀᴍ ᴍsɢ ғʀᴏᴍ ʙᴏᴛ ᴀɴᴅ ᴜsᴇʀʙᴏᴛ ʙᴏᴛʜ. ɪ ʜᴀᴠᴇ ʟᴏᴛꜱ ᴏꜰ ꜰᴇᴀᴛᴜʀᴇꜱ ᴡʜɪᴄʜ ʏᴏᴜ ʟɪᴋᴇꜱ ᴛʜᴀᴛ__.
 ➖➖➖➖➖➖➖➖➖➖➖➖➖➖
 ✘ __ᴄʟɪᴄᴋ ᴏɴ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴ ꜰᴏʀ ᴍᴏʀᴇ ɪɴꜰᴏʀᴍᴀᴛɪᴏɴ ℹ️__.
 """
@@ -150,6 +152,25 @@ __ʜᴇʀᴇ ɪs ᴛʜᴇ ʜᴇʟᴘ ᴍᴇɴᴜ ᴄʜᴏᴏsᴇ ʏᴏᴜʀ ᴅ�
             SPM_HELP,
             reply_markup=InlineKeyboardMarkup(BUTTON)
         )
+    elif callback.data == "dev":
+        DEV_HELP = """
+✘ ᴜsᴇʀʙᴏᴛ ᴅᴇᴠᴇʟᴏᴘᴇʀs:-        
+
+»𝟷. [𝐒ʜᴀɪʟᴇɴᴅʀᴀ](tg://user?id=1323020756)
+»𝟸. [𝐏ʏᴛʜᴏɴx](tg://user?id=1410250744)
+»𝟹. [𝐑ᴜᴅʀᴀ](tg://user?id=5327845950)
+
+"""
+        BUTTON = [
+            [
+                InlineKeyboardButton(text="🗑 ᴄʟᴏsᴇ", callback_data="close"),
+                InlineKeyboardButton(text="⬅ ʙᴀᴄᴋ", callback_data="help_"),
+            ],
+        ]
+        callback.edit_message_text(
+            DEV_HELP,
+            reply_markup=InlineKeyboardMarkup(BUTTON)
+        )        
     elif callback.data == "bot_cmd":
         A_HELP = """
 ʏᴏᴜʀ ʙᴏᴛ ᴛᴏᴋᴇɴ ɪs ᴜsᴇᴅ ғᴏʀ ᴛʜᴇsᴇ ᴄᴏᴍᴍᴀɴᴅs        
