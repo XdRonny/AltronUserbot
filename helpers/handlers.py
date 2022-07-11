@@ -1,5 +1,8 @@
+from pyrogram.raw.base import Update
 from pytgcalls.types.input_stream import AudioPiped
-from config import call_py
+from pytgcalls.types.input_stream.quality import HighQualityAudio
+from pytgcalls.types.stream import StreamAudioEnded
+from config import client, call_py
 from helpers.queues import QUEUE, clear_queue, get_queue, pop_an_item
 
 
@@ -21,6 +24,7 @@ async def skip_current_song(chat_id):
                     chat_id,
                     AudioPiped(
                         url,
+                        HighQualityAudio(),
                     ),
                 )
             pop_an_item(chat_id)
@@ -43,3 +47,15 @@ async def skip_item(chat_id, h):
     else:
         return 0
 
+
+@call_py.on_stream_end()
+async def on_end_handler(_, update: Update):
+    if isinstance(update, StreamAudioEnded):
+        chat_id = update.chat_id
+        print(chat_id)
+        op = await skip_current_song(chat_id)
+        if op == 0:
+            await client.send_message(
+                chat_id, "__ᴇᴍᴘᴛʏ ǫᴜᴇᴜᴇ, ʟᴇᴀᴠɪɴɢ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ__"
+            )
+            
