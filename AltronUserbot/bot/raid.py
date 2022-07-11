@@ -1,3 +1,5 @@
+# BOT TOKEN RAID
+
 from pyrogram.types import *
 import os
 import sys
