@@ -1,7 +1,7 @@
 from pyrogram import filters, Client
 from config import client, SUDO_USERS
 from pyrogram.types import Message
-from config *
+from config import *
 
 @client.on_message(filters.command(["help"], ["/", "!", "."]) & filters.user(SUDO_USERS))
 @client.on_message(filters.command(["help"], ["/", "!", "."]) & filters.me)
