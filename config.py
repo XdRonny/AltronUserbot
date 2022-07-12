@@ -8,7 +8,7 @@ from pyrogram import Client
 from pyrogram.types import *
 from pytgcalls import PyTgCalls
 
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.WARNING)
 
                     
 if os.path.exists("Internal"):
