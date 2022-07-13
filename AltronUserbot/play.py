@@ -3,13 +3,12 @@ import random
 from helpers.command import commandpro
 from helpers.decorators import errors, sudo_users_only
 from pyrogram.types import Message
-from pyrogram import Client
 from pytgcalls import StreamType
 from pytgcalls.types.input_stream import AudioPiped
 from pytgcalls.types.input_stream.quality import HighQualityAudio
 from youtubesearchpython import VideosSearch
 from config import client, call_py
-from helpers.queues import QUEUE, add_to_queue
+from helpers.queues import QUEUE, add_to_queue, get_queue
 
 # music player
 def ytsearch(query):
@@ -33,6 +32,7 @@ async def ytdl(link):
         "yt-dlp",
         "-g",
         "-f",
+        # CHANGE THIS BASED ON WHAT YOU WANT
         "bestaudio",
         f"{link}",
         stdout=asyncio.subprocess.PIPE,
@@ -45,10 +45,10 @@ async def ytdl(link):
         return 0, stderr.decode()
 
 
-@client.on_message(commandpro(["!play", "/play", "/p", "P", "Play", "!p", "+"]))
+@Client.on_message(commandpro(["!play", "/p", "!p", "$p", "/play", "P", "Play"]))
 @errors
 @sudo_users_only
-async def play(Client, m: Message):
+async def play(client, m: Message):
     replied = m.reply_to_message
     chat_id = m.chat.id
     m.chat.title
@@ -68,6 +68,7 @@ async def play(Client, m: Message):
             if chat_id in QUEUE:
                 pos = add_to_queue(chat_id, songname, dl, link, "Audio", 0)
                 await huehue.delete()
+                # await m.reply_to_message.delete()
                 await m.reply_text(f"""
 **⃣ 𝑺𝒐𝒏𝒈 𝒊𝒏 𝒒𝒖𝒆𝒖𝒆 𝒕𝒐 {pos}
 🎵 𝑶𝒏 𝒓𝒆𝒒𝒖𝒆𝒔𝒕 {m.from_user.mention}**
@@ -84,6 +85,7 @@ async def play(Client, m: Message):
                 )
                 add_to_queue(chat_id, songname, dl, link, "Audio", 0)
                 await huehue.delete()
+                # await m.reply_to_message.delete()
                 await m.reply_text(f"""
 **▶️ 𝑺𝒕𝒂𝒓𝒕𝒆𝒅 𝒑𝒍𝒂𝒚𝒊𝒏𝒈 𝒔𝒐𝒏𝒈
 🎵 𝑶𝒏 𝒓𝒆𝒒𝒖𝒆𝒔𝒕 {m.from_user.mention}**
@@ -110,6 +112,7 @@ async def play(Client, m: Message):
                     if chat_id in QUEUE:
                         pos = add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
                         await huehue.delete()
+                        # await m.reply_to_message.delete()
                         m.reply_text(f"""
 **⃣ 𝑨𝒅𝒅𝒆𝒅 𝒊𝒏 𝒒𝒖𝒆𝒖𝒆 𝒂𝒕 {pos}
 🎵 𝑶𝒏 𝒓𝒆𝒒𝒖𝒆𝒔𝒕 {m.from_user.mention}**
@@ -127,6 +130,7 @@ async def play(Client, m: Message):
                             )
                             add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
                             await huehue.delete()
+                            # await m.reply_to_message.delete()
                             await m.reply_text(f"""
 **▶️ 𝑺𝒕𝒂𝒓𝒕𝒆𝒅 𝒑𝒍𝒂𝒚𝒊𝒏𝒈 𝒔𝒐𝒏𝒈
 🎵 𝑶𝒏 𝒓𝒆𝒒𝒖𝒆𝒔𝒕 {m.from_user.mention}**
@@ -136,10 +140,11 @@ async def play(Client, m: Message):
                             await huehue.edit(f"`{ep}`")
 
 
-@client.on_message(commandpro([".playfrom", "!playfrom", "/playfrom", "PF", "playfrom"]))
+
+@Client.on_message(commandpro(["/pf", "!playfrom", "/playfrom", "PF", "!pf"]))
 @errors
 @sudo_users_only
-async def playfrom(Client, m: Message):
+async def playfrom(client, m: Message):
     chat_id = m.chat.id
     if len(m.command) < 2:
         await m.reply(
@@ -169,10 +174,7 @@ async def playfrom(Client, m: Message):
                 else:
                     await call_py.join_group_call(
                         chat_id,
-                        AudioPiped(
-                            location,
-                            HighQualityAudio(),
-                        ),
+                        AudioPiped(location, HighQualityAudio()),
                         stream_type=StreamType().pulse_stream,
                     )
                     add_to_queue(chat_id, songname, location, link, "Audio", 0)
@@ -190,3 +192,27 @@ async def playfrom(Client, m: Message):
             await hmm.edit(f"**𝑬𝒓𝒓𝒐𝒓....** \n`{e}`")
 
 
+@Client.on_message(commandpro(["/pl", "/playlist", "!playlist", "!pl", "pl", "/queue"]))
+@errors
+@sudo_users_only
+async def playlist(client, m: Message):
+    chat_id = m.chat.id
+    if chat_id in QUEUE:
+        chat_queue = get_queue(chat_id)
+        if len(chat_queue) == 1:
+            await m.delete()
+            await m.reply(
+                f"**🎵 𝑵𝒐𝒘 𝑷𝒍𝒂𝒚𝒊𝒏𝒈** \n[{chat_queue[0][0]}]({chat_queue[0][2]}) | `{chat_queue[0][3]}`",
+                disable_web_page_preview=True,
+            )
+        else:
+            QUE = f"**🎵 𝑵𝒐𝒘 𝑷𝒍𝒂𝒚𝒊𝒏𝒈** \n[{chat_queue[0][0]}]({chat_queue[0][2]}) | `{chat_queue[0][3]}` \n\n**⏯️ 𝑸𝒖𝒆𝒖𝒆 𝑳𝒊𝒔𝒕**"
+            l = len(chat_queue)
+            for x in range(1, l):
+                hmm = chat_queue[x][0]
+                hmmm = chat_queue[x][2]
+                hmmmm = chat_queue[x][3]
+                QUE = QUE + "\n" + f"**#{x}** - [{hmm}]({hmmm}) | `{hmmmm}`\n"
+            await m.reply(QUE, disable_web_page_preview=True)
+    else:
+        await m.reply("**❌ 𝑫𝒐𝒆𝒔𝒏'𝒕 𝒑𝒍𝒂𝒚 𝒂𝒏𝒚𝒕𝒉𝒊𝒏𝒈**")
