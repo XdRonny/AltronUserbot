@@ -8,7 +8,7 @@ from pyrogram import Client
 from pyrogram.types import *
 from pytgcalls import PyTgCalls
 
-logging.basicConfig(level=logging.WARNING)
+logging.basicConfig(level=logging.INFO)
 
                     
 if os.path.exists("Internal"):
@@ -51,7 +51,6 @@ bot = Client(
     api_id=API_ID,
     api_hash=API_HASH,
     bot_token=BOT_TOKEN,
-    plugins={'root': 'AltronUserbot.bot'},
 )
 
 #-------------------------CLIENTS-----------------------------
