@@ -24,7 +24,6 @@ async def skip_current_song(chat_id):
                     chat_id,
                     AudioPiped(
                         url,
-                        HighQualityAudio(),
                     ),
                 )
             pop_an_item(chat_id)
@@ -61,5 +60,6 @@ async def on_end_handler(_, update: Update):
         else:
             await client.send_message(
                 chat_id,
-                "__ᴇᴍᴘᴛʏ ǫᴜᴇᴜᴇ, ʟᴇᴀᴠɪɴɢ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ__",
+                f"**🎵 ɴᴏᴡ ᴘʟᴀʏɪɴɢ** \n[{op[0]}]({op[1]}) | `{op[2]}`",
+                disable_web_page_preview=True,
             )
