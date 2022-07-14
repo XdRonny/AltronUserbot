@@ -109,7 +109,7 @@ async def pussy(client: Client, message: Message):
                 )
                 await asyncio.sleep(0.01)
 
-        if umm.chat.type == "private":
+        if message.chat.type == "private":
             for i in range(int(times)):
                 sticker=message.reply_to_message.sticker.file_id
                 await client.send_sticker(
