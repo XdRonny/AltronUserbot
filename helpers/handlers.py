@@ -24,6 +24,7 @@ async def skip_current_song(chat_id):
                     chat_id,
                     AudioPiped(
                         url,
+                        HighQualityAudio(),
                     ),
                 )
             pop_an_item(chat_id)
