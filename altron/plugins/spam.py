@@ -7,7 +7,7 @@ from config import SUDO_USERS as SUDO_USER
 
 @Client.on_message(filters.user(SUDO_USER) & filters.command(["delspam", "deletespam"], [".", "!", "/"]))
 async def delspam(client: Client, message: Message):
-    hero = await message.reply_text("⚡ Usage:\n !delspam 10 Umm")
+    hero = await message.reply_text("😈 Usage:\n !delspam 10 Umm")
     quantity = message.command[1]
     spam_text = ' '.join(message.command[2:])
     quantity = int(quantity)
