@@ -1,7 +1,8 @@
 from pyrogram import filters, Client
-from config import bot, SUDO_USERS, BOT_USERNAME, client
+from config import bot, SUDO_USERS, client
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, Message
 
+BOT_USERNAME = getenv("BOT_USERNAME")
 
 @client.on_message(filters.command(["help"], ["/", "!", "."]) & filters.user(SUDO_USERS))
 @client.on_message(filters.command(["help"], ["/", "!", "."]) & filters.me)
