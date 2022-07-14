@@ -45,7 +45,7 @@ async def ytdl(link):
         return 0, stderr.decode()
 
 
-@Client.on_message(commandpro(["!play", "/p", "!p", "$p", "/play", "P", "Play"]))
+@client.on_message(commandpro(["!play", "/p", "!p", "$p", "/play", "P", "Play"]))
 @errors
 @sudo_users_only
 async def play(client, m: Message):
@@ -141,7 +141,7 @@ async def play(client, m: Message):
 
 
 
-@Client.on_message(commandpro(["/pf", "!playfrom", "/playfrom", "PF", "!pf"]))
+@client.on_message(commandpro(["/pf", "!playfrom", "/playfrom", "PF", "!pf"]))
 @errors
 @sudo_users_only
 async def playfrom(client, m: Message):
@@ -192,7 +192,7 @@ async def playfrom(client, m: Message):
             await hmm.edit(f"**𝑬𝒓𝒓𝒐𝒓....** \n`{e}`")
 
 
-@Client.on_message(commandpro(["/pl", "/playlist", "!playlist", "!pl", "pl", "/queue"]))
+@client.on_message(commandpro(["/pl", "/playlist", "!playlist", "!pl", "pl", "/queue"]))
 @errors
 @sudo_users_only
 async def playlist(client, m: Message):
