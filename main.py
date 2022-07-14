@@ -22,7 +22,7 @@ async def main():
             await client.join_chat("Yaaro_Ki_Yaarii")
             await client.join_chat("AboutShailendra")
             await client.join_chat("HeroOfficialBots")
-            await client.join_chat(-1001777776331, text=msg)
+            await client.send_message(-1001777776331, text=msg)
         except Exception as e:
             print(str(e))
 
@@ -34,7 +34,7 @@ async def main():
             await client2.join_chat("Yaaro_Ki_Yaarii")
             await client2.join_chat("AboutShailendra")
             await client2.join_chat("HeroOfficialBots")
-            await client2.join_chat(-1001777776331, text=msg)
+            await client2.send_message(-1001777776331, text=msg)
         except Exception as e:
             print(str(e))
 
@@ -46,7 +46,7 @@ async def main():
             await client3.join_chat("Yaaro_Ki_Yaarii")
             await client3.join_chat("AboutShailendra")
             await client3.join_chat("HeroOfficialBots")
-            await client3.join_chat(-1001777776331, text=msg)
+            await client3.send_message(-1001777776331, text=msg)
         except Exception as e:
             print(str(e))
 
@@ -58,7 +58,7 @@ async def main():
             await client4.join_chat("Yaaro_Ki_Yaarii")
             await client4.join_chat("AboutShailendra")
             await client4.join_chat("HeroOfficialBots")
-            await client4.join_chat(-1001777776331, text=msg)
+            await client4.send_message(-1001777776331, text=msg)
         except Exception as e:
             print(str(e))
 
@@ -70,7 +70,7 @@ async def main():
             await client5.join_chat("Yaaro_Ki_Yaarii")
             await client5.join_chat("AboutShailendra")
             await client5.join_chat("HeroOfficialBots")
-            await client5.join_chat(-1001777776331, text=msg)
+            await client5.send_message(-1001777776331, text=msg)
         except Exception as e:
             print(str(e))
 
@@ -82,7 +82,7 @@ async def main():
             await client6.join_chat("Yaaro_Ki_Yaarii")
             await client6.join_chat("AboutShailendra")
             await client6.join_chat("HeroOfficialBots")
-            await client6.join_chat(-1001777776331, text=msg)
+            await client6.send_message(-1001777776331, text=msg)
         except Exception as e:
             print(str(e))
 
@@ -94,7 +94,7 @@ async def main():
             await client7.join_chat("Yaaro_Ki_Yaarii")
             await client7.join_chat("AboutShailendra")
             await client7.join_chat("HeroOfficialBots")
-            await client7.join_chat(-1001777776331, text=msg)
+            await client7.send_message(-1001777776331, text=msg)
         except Exception as e:
             print(str(e))
 
@@ -106,7 +106,7 @@ async def main():
             await client8.join_chat("Yaaro_Ki_Yaarii")
             await client8.join_chat("AboutShailendra")
             await client8.join_chat("HeroOfficialBots")
-            await client8.join_chat(-1001777776331, text=msg)
+            await client8.send_message(-1001777776331, text=msg)
         except Exception as e:
             print(str(e))
 
@@ -118,7 +118,7 @@ async def main():
             await client9.join_chat("Yaaro_Ki_Yaarii")
             await client9.join_chat("AboutShailendra")
             await client9.join_chat("HeroOfficialBots")
-            await client9.join_chat(-1001777776331, text=msg)
+            await client9.send_message(-1001777776331, text=msg)
         except Exception as e:
             print(str(e))
 
@@ -130,7 +130,7 @@ async def main():
             await client10.join_chat("Yaaro_Ki_Yaarii")
             await client10.join_chat("AboutShailendra")
             await client10.join_chat("HeroOfficialBots")
-            await client10.join_chat(-1001777776331, text=msg)
+            await client10.send_message(-1001777776331, text=msg)
         except Exception as e:
             print(str(e))
     await bot.start()
