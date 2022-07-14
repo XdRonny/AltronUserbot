@@ -9,17 +9,19 @@ from pyrogram.types import *
 from pytgcalls import PyTgCalls
 
 
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.WARNING)
                     
 if os.path.exists("Internal"):
     load_dotenv("Internal")
 
+version = 2.0
 
 #---------------------DON'T MESS WITH THESE REQUIRED CODES-------------------------------
 
 API_ID = int(getenv("API_ID"))
 API_HASH = getenv("API_HASH")
 BOT_TOKEN = getenv("BOT_TOKEN")
+BOT_USERNAME = getenv("BOT_USERNAME")
 SESSION = getenv("SESSION")
 UPSTREAM_REPO = getenv("UPSTREAM_REPO", "https://github.com/TheAltronX/AltronUserbot")
 
