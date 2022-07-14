@@ -1,6 +1,5 @@
 from pyrogram import filters, Client
-from config import bot, SUDO_USERS
-from config import *
+from config import bot, SUDO_USERS, BOT_USERNAME
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, Message
 
 
@@ -11,8 +10,6 @@ async def start(Client, message: Message):
     "**🤖 ʜᴇʏᴀ..!!**\n\n»__ ғᴏʀ ʜᴇʟᴘ ᴍᴇɴᴜ ɢᴏ ᴛᴏ ʏᴏᴜʀ ᴄʀᴇᴀᴛᴇᴅ ʙᴏᴛ's ᴅᴍ__ » @{BOT_USERNAME} \n\n__sᴏᴏɴ ᴀᴅᴅɪɴɢ ɪɴʟɪɴᴇ ʜᴇʟᴘ ᴍᴇɴᴜ ʙᴜᴛᴛᴏɴs ɪɴ ᴜsᴇʀʙᴏᴛ\nᴊᴏɪɴ » @Altron_X__"
     )
     
-    
-
 
 @bot.on_message(filters.command(["start"], ["/", "!", "$"]))
 async def start(client: Client, message: Message):
