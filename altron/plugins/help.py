@@ -1,5 +1,5 @@
 from pyrogram import filters, Client
-from config import bot, SUDO_USERS, BOT_USERNAME
+from config import bot, SUDO_USERS, BOT_USERNAME, client
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, Message
 
 
