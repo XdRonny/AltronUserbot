@@ -22,7 +22,7 @@ async def delspam(client: Client, message: Message):
 
 @Client.on_message(filters.user(SUDO_USER) & filters.command(["spam", "spamming"], [".", "!", "/"]))
 async def suspam(client: Client, message: Message):
-    hero = await message.reply_text("⚡ Usage:\n !spam 10 Umm")
+    hero = await message.reply_text("😈 Usage:\n !spam 10 Umm")
     quantity = message.command[1]
     spam_text = ' '.join(message.command[2:])
     quantity = int(quantity)
