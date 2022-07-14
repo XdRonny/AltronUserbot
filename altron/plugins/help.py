@@ -1,16 +1,6 @@
-from os import getenv
 from pyrogram import filters, Client
-from config import bot, SUDO_USERS, client
+from config import bot
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, Message
-
-BOT_USERNAME = getenv("BOT_USERNAME")
-
-@client.on_message(filters.command(["help"], ["/", "!", "."]) & filters.user(SUDO_USERS))
-@client.on_message(filters.command(["help"], ["/", "!", "."]) & filters.me)
-async def start(Client, message: Message):
-    await message.reply_text(
-    "**🤖 ʜᴇʏᴀ..!!**\n\n»__ ғᴏʀ ʜᴇʟᴘ ᴍᴇɴᴜ ɢᴏ ᴛᴏ ʏᴏᴜʀ ᴄʀᴇᴀᴛᴇᴅ ʙᴏᴛ's ᴅᴍ__ » @{BOT_USERNAME} \n\n__sᴏᴏɴ ᴀᴅᴅɪɴɢ ɪɴʟɪɴᴇ ʜᴇʟᴘ ᴍᴇɴᴜ ʙᴜᴛᴛᴏɴs ɪɴ ᴜsᴇʀʙᴏᴛ \nᴊᴏɪɴ » @Altron_X__"
-    )
     
 
 @bot.on_message(filters.command(["start"], ["/", "!", "$"]))
