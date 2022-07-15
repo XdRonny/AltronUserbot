@@ -6,43 +6,43 @@
     "stack": "container",
     "env": {
         "SESSION": {
-            "description": "pyrogram string session here",
+            "description": "pyrogram v1.4 string session here",
             "required": true
         },
         "SESSION2": {
-            "description": "pyrogram string session here",
+            "description": "pyrogram v1.4 string session here",
             "required": false
         },
         "SESSION3": {
-            "description": "pyrogram string session here",
+            "description": "pyrogram v1.4 string session here",
             "required": false
         },
         "SESSION4": {
-            "description": "pyrogram string session here",
+            "description": "pyrogram v1.4 string session here",
             "required": false
         },
         "SESSION5": {
-            "description": "pyrogram string session here",
+            "description": "pyrogram v1.4 string session here",
             "required": false
         },
         "SESSION6": {
-            "description": "pyrogram string session here",
+            "description": "pyrogram v1.4 string session here",
             "required": false
         },
         "SESSION7": {
-            "description": "pyrogram string session here",
+            "description": "pyrogram v1.4 string session here",
             "required": false
         },
         "SESSION8": {
-            "description": "pyrogram string session here",
+            "description": "pyrogram v1.4 string session here",
             "required": false
         },
         "SESSION9": {
-            "description": "pyrogram string session here",
+            "description": "pyrogram v1.4 string session here",
             "required": false
         },
         "SESSION10": {
-            "description": "pyrogram string session here",
+            "description": "pyrogram v1.4 string session here",
             "required": false
         },
         "BOT_TOKEN": {
