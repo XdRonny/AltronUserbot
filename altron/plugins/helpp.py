@@ -8,7 +8,7 @@ from pyrogram.types import Message
 @client.on_message(filters.command(["help"], ["/", "!", "."]) & filters.me)
 async def start(client, message: Message):
     await message.reply_text(
-    f"**🤖 ʜᴇʏᴀ..!!**\n\n»__ ғᴏʀ ʜᴇʟᴘ ᴍᴇɴᴜ ɢᴏ ᴛᴏ ʏᴏᴜʀ ᴄʀᴇᴀᴛᴇᴅ ʙᴏᴛ's ᴅᴍ » @{BOT_USERNAME} \n\nsᴏᴏɴ ᴀᴅᴅɪɴɢ ɪɴʟɪɴᴇ ʜᴇʟᴘ ᴍᴇɴᴜ ʙᴜᴛᴛᴏɴs ɪɴ ᴜsᴇʀʙᴏᴛ\nᴊᴏɪɴ » @Altron_X__"
+    f"»__ ғᴏʀ ʜᴇʟᴘ ᴍᴇɴᴜ ɢᴏ ᴛᴏ ʏᴏᴜʀ ᴄʀᴇᴀᴛᴇᴅ ʙᴏᴛ's ᴅᴍ__ » **@{BOT_USERNAME}** \n\n__sᴏᴏɴ ᴀᴅᴅɪɴɢ ɪɴʟɪɴᴇ ʜᴇʟᴘ ᴍᴇɴᴜ ʙᴜᴛᴛᴏɴs ɪɴ ᴜsᴇʀʙᴏᴛ ᴊᴏɪɴ__ » **@Altron_X**"
     )
     
     
