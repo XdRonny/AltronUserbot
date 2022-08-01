@@ -7,7 +7,7 @@ from helpers.handlers import skip_current_song, skip_item
 from helpers.queues import QUEUE, clear_queue
 
 
-@Client.on_message(commandpro(["!skip", ".skip", "/skip", "/s", "S", "Skip", "Next"]))
+@Client.on_message(commandpro(["!skip", ".skip", "/skip", "/s", "S", "Skip"]))
 @errors
 @sudo_users_only
 async def skip(client, m: Message):
