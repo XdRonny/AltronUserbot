@@ -6,13 +6,6 @@ from config import client, client2, client3, client4, client5, client6, client7,
 from config import *
 
 
-msg = """
-» __ᴀʟᴛʀᴏɴ ᴜsᴇʀʙᴏᴛ sᴜᴄᴇssғᴜʟʟʏ ᴅᴇᴘʟᴏʏᴇᴅ__
-» __ᴀʟᴛʀᴏɴ ᴠᴇʀsɪᴏɴ__ = 𝟸.𝟶
-» __ᴘʏʀᴏ ᴠᴇʀsɪᴏɴ__ = 𝟷.𝟺.𝟷𝟼
-
-"""
-
 async def main():
     if client:
         try:
@@ -22,7 +15,6 @@ async def main():
             await client.join_chat("Yaaro_Ki_Yaarii")
             await client.join_chat("AboutShailendra")
             await client.join_chat("HeroOfficialBots")
-            await client.send_message(-1001777776331, text=msg)
         except Exception as e:
             print(str(e))
 
